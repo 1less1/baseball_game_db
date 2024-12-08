@@ -7,8 +7,8 @@ Clone the REPO with: https://github.com/1less1/baseball_game_db.git
 1. **Countries**
 2. **Position**
 3. **Stadium**
-4. Team
-5. Coach
+4. **Team**
+5. **Coach**
 6. Player
 7. Ratings
 8. Season
