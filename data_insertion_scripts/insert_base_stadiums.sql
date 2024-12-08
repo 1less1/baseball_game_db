@@ -1,5 +1,6 @@
 USE baseball_game_db;
 
+-- Inserting 50 randomized stadiums!
 INSERT INTO stadium (Name, Field_Size, Ticket_Cost, Max_Capacity) VALUES
 ('Thunder Peak', 375, 25.50, 15000),
 ('Crimson Canyon', 390, 18.75, 12000),

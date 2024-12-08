@@ -1,5 +1,4 @@
 USE baseball_game_db;
-SHOW TABLES FROM baseball_game_db;
 
 -- Inserting the top 100 countries player's report as their origin in the MLB
 INSERT INTO countries (Country_ID, Country_Name) VALUES
@@ -101,6 +100,7 @@ INSERT INTO countries (Country_ID, Country_Name) VALUES
 ('NRU', 'Nauru'),
 ('MHL', 'Marshall Islands'),
 ('SLB', 'Solomon Islands'),
-('TLS', 'Timor-Leste');
+('TLS', 'Timor-Leste'),
+('FRA', 'France');
 
 SELECT * FROM Countries WHERE Country_ID LIKE 'C%';

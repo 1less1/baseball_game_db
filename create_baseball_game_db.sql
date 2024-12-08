@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `team` (
   UNIQUE INDEX `ID_UNIQUE` (`Team_ID` ASC) VISIBLE,
   UNIQUE INDEX `Name_UNIQUE` (`Name` ASC) VISIBLE,
   UNIQUE INDEX `HomeTown_UNIQUE` (`Home_Town` ASC) VISIBLE,
+   UNIQUE INDEX `Stadium_UNIQUE` (`Stadium_ID` ASC),
   INDEX `fk_Team_Stadium1_idx` (`Stadium_ID` ASC) VISIBLE,
   CONSTRAINT `FK_Team_Stadium`
     FOREIGN KEY (`Stadium_ID`)
@@ -82,10 +83,13 @@ CREATE TABLE IF NOT EXISTS `coach` (
   `Motivator` VARCHAR(8) NULL CHECK (Motivator IN ('Hitting', 'Pitching')),
   PRIMARY KEY (`Coach_ID`),
   UNIQUE INDEX `Coach_ID_UNIQUE` (`Coach_ID` ASC) VISIBLE,
+  UNIQUE INDEX `Team_ID_UNIQUE` (`Team_ID` ASC) VISIBLE,
   INDEX `fk_Coach_Team1_idx` (`Team_ID` ASC) VISIBLE,
-  CONSTRAINT `FK_Coach_Team`
+   CONSTRAINT `FK_Coach_Team`
     FOREIGN KEY (`Team_ID`)
-    REFERENCES `team` (`Team_ID`))
+    REFERENCES `team` (`Team_ID`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -292,4 +296,7 @@ SHOW WARNINGS;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- My Addition
+SHOW TABLES FROM baseball_game_db;
 
