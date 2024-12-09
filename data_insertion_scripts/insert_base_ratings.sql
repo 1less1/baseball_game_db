@@ -182,6 +182,172 @@ INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_N
 (143, 60, 79, 72, 85, 9, 8, 15),    -- Luis Martinez (Batter)
 (144, 77, 55, 92, 60, 8, 9, 7);     -- Nico Bianchi (Batter)
 
+-- Team 13: Quasar Comets starting from Player_ID = 145
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(145, 10, 7, 16, 12, 84, 65, 87),   -- Liam O’Connor (Pitcher)
+(146, 3, 5, 19, 9, 72, 75, 90),     -- Juan Rodriguez (Pitcher)
+(147, 78, 77, 91, 93, 10, 12, 9),   -- Hiroshi Tanaka (Batter)
+(148, 98, 55, 85, 71, 7, 8, 13),    -- Javier Moreno (Batter)
+(149, 42, 97, 79, 61, 14, 6, 11),   -- Carlos Jimenez (Batter)
+(150, 95, 37, 88, 81, 5, 7, 8),     -- Andres Gomez (Batter)
+(151, 62, 72, 89, 88, 8, 9, 11),    -- Ryan Miller (Batter)
+(152, 81, 96, 93, 65, 6, 10, 8),    -- Jiwon Park (Batter)
+(153, 50, 85, 90, 92, 7, 6, 10),    -- Carlos Vega (Batter)
+(154, 99, 99, 99, 99, 9, 12, 11),   -- Felipe Alvarez (Batter)
+(155, 55, 91, 84, 75, 5, 9, 6),     -- Santiago Diaz (Batter)
+(156, 73, 79, 76, 63, 8, 10, 9);    -- James Thompson (Batter)
+
+-- Team 14: Phantoms starting from Player_ID = 157
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(157, 8, 4, 17, 12, 83, 55, 93),    -- Ethan Hughes (Pitcher)
+(158, 5, 10, 14, 9, 88, 80, 85),    -- Miguel Mendez (Pitcher)
+(159, 48, 88, 81, 77, 9, 7, 12),    -- Carlos Perez (Batter)
+(160, 99, 30, 75, 68, 6, 8, 10),    -- Jose Castillo (Batter)
+(161, 72, 99, 91, 84, 7, 5, 9),     -- Shinji Fujimoto (Batter)
+(162, 66, 66, 88, 75, 8, 6, 11),    -- Brad Edwards (Batter)
+(163, 64, 89, 85, 79, 6, 10, 8),    -- Liam O’Connor (Batter)
+(164, 74, 93, 92, 68, 5, 6, 7),     -- Jiho Kim (Batter)
+(165, 50, 85, 88, 90, 10, 9, 12),   -- Antonio Reyes (Batter)
+(166, 92, 99, 99, 99, 11, 5, 6),    -- Cing Kim (Batter)
+(167, 50, 74, 76, 65, 6, 8, 7),     -- Felipe Gonzalez (Batter)
+(168, 77, 83, 80, 72, 8, 10, 9);    -- Luca Rossi (Batter)
+
+-- Team 15: Eclipse starting from Player_ID = 169
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(169, 11, 8, 14, 6, 65, 99, 81),    -- Dylan Smith (Pitcher)
+(170, 5, 10, 17, 9, 90, 72, 88),    -- Carlos Sanchez (Pitcher)
+(171, 64, 97, 80, 72, 6, 10, 7),    -- Rafael Martinez (Batter)
+(172, 88, 55, 91, 60, 9, 7, 12),    -- Victor Pereira (Batter)
+(173, 72, 87, 78, 75, 5, 6, 9),     -- Hiroshi Yamada (Batter)
+(174, 92, 78, 88, 83, 10, 8, 6),    -- Juan Lopez (Batter)
+(175, 82, 65, 76, 71, 6, 9, 10),    -- Ryan Singh (Batter)
+(176, 60, 89, 95, 81, 9, 8, 11),    -- Minseok Park (Batter)
+(177, 55, 87, 86, 84, 8, 7, 9),     -- Ming Han (Batter)
+(178, 90, 99, 92, 95, 7, 5, 6),     -- Esteban Zuniga (Batter)
+(179, 82, 55, 80, 72, 10, 6, 8),    -- Luca Bianchi (Batter)
+(180, 79, 65, 88, 74, 8, 7, 11);    -- Marco Costa (Batter)
+
+-- Team 16: Aether Hawks starting from Player_ID = 181
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(181, 10, 15, 12, 8, 85, 65, 81),     -- Haruto Takahashi (Pitcher)
+(182, 8, 10, 20, 14, 68, 86, 88),     -- Pedro Rodriguez (Pitcher)
+(183, 97, 45, 74, 60, 6, 9, 3),       -- Javier Gomez (Batter)
+(184, 77, 90, 91, 82, 5, 4, 10),      -- Luis Martinez (Batter)
+(185, 65, 80, 63, 95, 8, 6, 7),       -- Noah Jackson (Batter)
+(186, 84, 99, 85, 55, 9, 7, 5),       -- Carlos Hernandez (Batter)
+(187, 40, 91, 96, 78, 10, 5, 8),      -- Ethan Williams (Batter)
+(188, 95, 58, 99, 88, 7, 6, 11),      -- Jiho Lee (Batter)
+(189, 72, 87, 92, 81, 6, 8, 10),      -- Antonio Gonzalez (Batter)
+(190, 60, 88, 70, 66, 8, 9, 6),       -- Emilio Perez (Batter)
+(191, 83, 45, 88, 90, 5, 10, 8),      -- Hiro Mataka (Batter)
+(192, 99, 68, 78, 85, 9, 11, 7);      -- Matteo Bianchi (Batter)
+
+-- Team 17: Mystic Mirages starting from Player_ID = 193
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(193, 15, 10, 18, 12, 85, 93, 65),      -- Minseok Park (Pitcher)
+(194, 12, 20, 9, 18, 87, 77, 76),       -- Ferdinand Bianchi (Pitcher)
+(195, 72, 65, 78, 59, 6, 9, 3),         -- Jose Hernandez (Batter)
+(196, 99, 90, 88, 79, 7, 5, 8),         -- Carlos Silva (Batter)
+(197, 80, 74, 85, 95, 6, 8, 7),         -- Zachary Brown (Batter)
+(198, 27, 99, 72, 91, 9, 7, 5),         -- Eduardo Martinez (Batter)
+(199, 54, 70, 63, 65, 8, 9, 6),         -- Yuki Tanaka (Batter)
+(200, 85, 87, 91, 93, 9, 6, 9),         -- Lucas Johnson (Batter)
+(201, 91, 71, 83, 55, 7, 10, 8),        -- Felipe Mendes (Batter)
+(202, 73, 92, 77, 92, 6, 5, 10),        -- Diego Gonzalez (Batter)
+(203, 65, 55, 66, 84, 6, 8, 9),         -- Juan Lopez (Batter)
+(204, 60, 83, 90, 70, 9, 6, 7);         -- Carlos Rodriguez (Batter)
+
+-- Team 18: Trailblazers starting from Player_ID = 205
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(205, 8, 12, 6, 15, 90, 48, 85),       -- Jose Mendez (Pitcher)
+(206, 10, 7, 11, 14, 76, 57, 95),      -- Felipe Perez (Pitcher)
+(207, 66, 95, 60, 87, 10, 5, 8),       -- Javier Martinez (Batter)
+(208, 95, 84, 79, 90, 7, 6, 4),        -- Christian Yamamoto (Batter)
+(209, 40, 99, 75, 98, 5, 9, 7),        -- Oliver Johnson (Batter)
+(210, 72, 85, 60, 87, 10, 5, 8),       -- Eli Brown (Batter)
+(211, 63, 92, 88, 81, 8, 5, 10),       -- Takeshi Fujimoto (Batter)
+(212, 87, 73, 66, 91, 6, 9, 7),        -- Jin Lee-Ho (Batter)
+(213, 74, 58, 82, 77, 9, 10, 6),       -- Antonio Martinez (Batter)
+(214, 67, 81, 59, 72, 8, 7, 9),        -- Diego Warrior (Batter)
+(215, 77, 69, 84, 88, 5, 6, 4),        -- Carlos Gomez (Batter)
+(216, 78, 37, 75, 80, 9, 8, 7);        -- Lucas Oliver (Batter)
+
+-- Team 19: Valkyries starting from Player_ID = 217
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(217, 10, 12, 7, 15, 70, 99, 68),       -- Esteban Silva (Pitcher)
+(218, 8, 11, 6, 13, 90, 81, 87),        -- Ryan Lee (Pitcher)
+(219, 89, 75, 64, 76, 5, 7, 6),         -- Kenta Nakamura (Batter)
+(220, 78, 77, 59, 82, 6, 4, 7),         -- Victor Martinez (Batter)
+(221, 99, 84, 69, 84, 8, 9, 5),         -- Rafael Tay (Batter)
+(222, 74, 60, 77, 73, 7, 5, 6),         -- Juan Lopez (Batter)
+(223, 39, 97, 88, 91, 5, 4, 8),         -- Carlos Gomez (Batter)
+(224, 69, 72, 80, 85, 6, 8, 7),         -- Jin Kang (Batter)
+(225, 77, 55, 85, 88, 9, 6, 5),         -- Carlos Mendoza (Batter)
+(226, 65, 70, 71, 75, 6, 9, 8),         -- Isaac Cortes (Batter)
+(227, 88, 95, 67, 89, 7, 8, 6),         -- Luis Kozlov (Batter)
+(228, 72, 90, 75, 80, 5, 7, 8);         -- Matty Chang (Batter)
+
+-- Team 20: Iron Thunder starting from Player_ID = 229
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(229, 12, 8, 9, 14, 99, 69, 90),        -- Yoshinobo Tanaka (Pitcher)
+(230, 6, 10, 7, 13, 74, 88, 83),        -- Carlos Garcia (Pitcher)
+(231, 91, 99, 70, 81, 6, 7, 9),         -- Rafael Martinez (Batter)
+(232, 89, 77, 72, 80, 4, 6, 8),         -- Victor Santos (Batter)
+(233, 85, 35, 63, 78, 8, 5, 6),         -- Carlos Ramos (Batter)
+(234, 55, 82, 67, 88, 9, 7, 5),         -- Juan Torres (Batter)
+(235, 65, 60, 91, 75, 7, 6, 9),         -- Ryan Miller (Batter)
+(236, 72, 93, 86, 74, 5, 4, 7),         -- Jin Lee (Batter)
+(237, 97, 80, 77, 89, 8, 9, 6),         -- Kenta Fujimoto (Batter)
+(238, 88, 65, 81, 90, 6, 5, 4),         -- Esteban Zuniga (Batter)
+(239, 72, 82, 92, 84, 7, 8, 5),         -- Luis Fernandez (Batter)
+(240, 86, 93, 79, 87, 4, 6, 8);         -- Marco Costa (Batter)
+
+-- Free Agents: Starting from Player_ID = 229
+INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine) VALUES
+(229, 10, 8, 7, 12, 81, 85, 79),        -- Johnny Mitchell (Pitcher)
+(230, 75, 81, 72, 68, 4, 5, 6),         -- Ignacio DeLacruz (Catcher)
+(231, 71, 77, 68, 80, 5, 6, 4),         -- Haruto Fukuda (First Baseman)
+(232, 12, 9, 10, 14, 83, 79, 84),       -- Diego Valladares (Pitcher)
+(233, 67, 73, 59, 76, 6, 5, 7),         -- Thiago Monteiro (Second Baseman)
+(234, 65, 69, 74, 77, 5, 4, 6),         -- Sungmin Park (Third Baseman)
+(235, 11, 13, 9, 10, 85, 83, 81),       -- Gabriel Mendoza (Pitcher)
+(236, 72, 74, 76, 81, 4, 5, 6),         -- Orlando Quintero (Shortstop)
+(237, 69, 79, 71, 75, 5, 6, 7),         -- Carter Grayson (Outfielder)
+(238, 10, 11, 9, 13, 84, 82, 79),       -- Luciano Martinez (Pitcher)
+(239, 74, 82, 70, 78, 6, 5, 4),         -- Takumi Nakamura (Catcher)
+(240, 70, 78, 64, 72, 5, 4, 6),         -- Eli Briar (First Baseman)
+(241, 9, 12, 11, 14, 82, 85, 78),       -- Salvador Arango (Pitcher)
+(242, 69, 75, 68, 79, 5, 6, 7),         -- Santiago Fernandes (Second Baseman)
+(243, 66, 72, 65, 73, 4, 5, 6),         -- Daichi Kobayashi (Third Baseman)
+(244, 12, 8, 10, 12, 79, 83, 85),       -- Montserrat Villalobos (Pitcher)
+(245, 77, 74, 79, 82, 5, 4, 6),         -- Lorenzo Gomes (Shortstop)
+(246, 70, 78, 72, 75, 5, 6, 7),         -- Hinjun Choi (Outfielder)
+(247, 13, 9, 8, 12, 84, 79, 83),        -- Devin Williams (Pitcher)
+(248, 74, 80, 71, 77, 6, 4, 5),         -- Tobias Alvarez (Catcher)
+(249, 73, 77, 69, 74, 5, 6, 7),         -- TJ Brady (First Baseman)
+(250, 8, 12, 10, 13, 83, 81, 84),       -- Valeria Serrano (Pitcher)
+(251, 70, 73, 66, 78, 6, 5, 4),         -- Riku Yamada (Second Baseman)
+(252, 64, 72, 65, 71, 5, 4, 6),         -- PJ Wood (Third Baseman)
+(253, 9, 14, 11, 15, 80, 85, 81),       -- Mateo Lozano (Pitcher)
+(254, 72, 78, 68, 79, 4, 5, 6),         -- Hikaru Takahashi (Shortstop)
+(255, 68, 74, 71, 77, 5, 6, 4),         -- Adam Sterling (Outfielder)
+(256, 10, 11, 12, 14, 85, 80, 79),      -- Ben Ryan (Pitcher)
+(257, 78, 81, 74, 72, 4, 5, 6),         -- Adam Jones (Catcher)
+(258, 75, 80, 72, 78, 5, 6, 7);         -- Javier Caraballo (First Baseman)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
