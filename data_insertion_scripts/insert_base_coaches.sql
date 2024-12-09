@@ -1,38 +1,47 @@
 USE baseball_game_db;
 
--- Inserting a total of 40 coaches. 30 will be assigned unique teams. 10 will have no team (Team_ID = NULL)
+-- Inserting a total of 30 coaches. 20 will be assigned unique teams. 10 will have no team (Team_ID = NULL)
 INSERT INTO coach (First_Name, Last_Name, Team_ID, Motivator) VALUES
--- 30 coaches with uniquely assigned teams taken from the base team entities
-('Liam', 'Archer', 1, NULL),
-('Ethan', 'Harrison', 2, NULL),
-('Julian', 'Caldwell', 3, 'Hitting'),
+-- Team 1: Crushers
+('Liam', 'Archer', 1, 'Hitting'),
+-- Team 2: Phoenix
+('Ethan', 'Harrison', 2, 'Pitching'),
+-- Team 3: Stormbreakers
+('Julian', 'Caldwell', 3, NULL),
+-- Team 4: Guardians of the Galaxy
 ('Sebastian', 'Parker', 4, 'Pitching'),
-('Wyatt', 'Fletcher', 5, 'Pitching'),
-('Jasper', 'Morris', 6, NULL),
-('Aidan', 'West', 7, 'Hitting'),
-('Maxwell', 'Stewart', 8, NULL),
+-- Team 5: Flyers
+('Wyatt', 'Fletcher', 5, NULL),
+-- Team 6: Knights
+('Jasper', 'Morris', 6, 'Hitting'),
+-- Team 7: Blaze Hounds
+('Aidan', 'West', 7, 'Pitching'),
+-- Team 8: Werewolves
+('Maxwell', 'Stewart', 8, 'Hitting'),
+-- Team 9: Dragons
 ('Nolan', 'King', 9, NULL),
+-- Team 10: Pirates
 ('Elijah', 'Montgomery', 10, 'Pitching'),
+-- Team 11: Vortex Vipers
 ('Luca', 'Green', 11, 'Hitting'),
-('Asher', 'Reed', 12, 'Hitting'),
+-- Team 12: Tempest Titans
+('Asher', 'Reed', 12, NULL),
+-- Team 13: Quasar Comets
 ('Henry', 'Tucker', 13, 'Hitting'),
-('Kai', 'Dawson', 14, 'Pitching'),
-('Finn', 'Gibson', 15, NULL),
-('Gavin', 'Walters', 16, 'Pitching'),
+-- Team 14: Phantoms
+('Kai', 'Dawson', 14, NULL),
+-- Team 15: Eclipse
+('Finn', 'Gibson', 15, 'Pitching'),
+-- Team 16: Aether Hawks
+('Gavin', 'Walters', 16, 'Hitting'),
+-- Team 17: Mirage Mystics
 ('Theo', 'Owen', 17, NULL),
-('Isaiah', 'Cameron', 18, 'Pitching'),
+-- Team 18: Trailblazers
+('Isaiah', 'Cameron', 18, NULL),
+-- Team 19: Valkyries
 ('Levi', 'Miller', 19, 'Hitting'),
-('Jude', 'Sullivan', 20, NULL),
-('Miles', 'Carter', 21, 'Hitting'),
-('Jackson', 'Hayes', 22, 'Hitting'),
-('Owen', 'Bennett', 23, 'Pitching'),
-('Samuel', 'Grayson', 24, 'Pitching'),
-('Felix', 'Kendall', 25, 'Pitching'),
-('Jonah', 'Rivers', 26, 'Pitching'),
-('Xander', 'Hudson', 27, 'Hitting'),
-('Isaac', 'Blake', 28, 'Hitting'),
-('Gage', 'Mason', 29, 'Hitting'),
-('Cole', 'Spencer', 30, NULL),
+-- Team 20: Iron Thunder
+('Jude', 'Sullivan', 20, 'Pitching'),
 
 -- 10 coaches with NO team assigned (NULL)
 ('Dawson', 'Wyatt', NULL, 'Pitching'),

@@ -1,4 +1,4 @@
-use baseball_game_db;
+USE baseball_game_db;
 
 -- Inserting the 9 traditional positions on the baseball field with ther corresponding IDs that are put into a normal Baseball score book!
 INSERT INTO position (Position_ID, Code, Name) VALUES
