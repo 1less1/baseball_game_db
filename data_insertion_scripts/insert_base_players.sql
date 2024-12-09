@@ -1,145 +1,144 @@
 USE baseball_game_db;
--- Inserting 10 players for each of the 20 base teams as well as 60 free agent players with no assigned team (NULL)!
--- 260 Players Total
+-- Inserting 12 players for each of the 20 base teams as well as 60 free agent players with no assigned team (NULL)!
+-- 300 Players Total
 
 ----------------------------------------------------------------------------------------
 -- AL Teams 
 ----------------------------------------------------------------------------------------
 -- Team 1: Crushers
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Owen', 'Walker', 1, 1, 26, 'USA'),
+('Mitchell', 'Walker', 1, 1, 26, 'USA'),
 ('Luis', 'Sanchez', 1, 1, 28, 'CUB'),
 ('Carlos', 'Martinez', 2, 1, 30, 'DOM'),
 ('Miguel', 'Perez', 3, 1, 27, 'VEN'),
-('Hiroshi', 'Kobayashi', 4, 1, 24, 'JPN'),
+('Tyler', 'King', 4, 1, 22, 'USA'),
 ('Andres', 'Hernandez', 5, 1, 25, 'MEX'),
-('Tyler', 'King', 6, 1, 22, 'CAN'),
+('Hiroshi', 'Kobayashi', 6, 1, 24, 'JPN'),
 ('Jin', 'Choi', 7, 1, 23, 'KOR'),
-('Alex', 'Garcia', 8, 1, 21, 'PUR'),
+('Ji-Man', 'Cho', 8, 1, 21, 'KOR'),
 ('Esteban', 'Lopez', 9, 1, 24, 'PAN'),
 ('Santiago', 'Martinez', 2, 1, 26, 'COL'),
-('Luca', 'Rossi', 5, 1, 27, 'ITA');
+('Ming-Ho', 'Park', 5, 1, 27, 'CHN');
 
 -- Team 2: Phoenix
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
 ('Aiden', 'Bryant', 1, 2, 23, 'USA'),
 ('Juan', 'Gomez', 1, 2, 29, 'DOM'),
-('Carlos', 'Rodriguez', 2, 2, 28, 'CUB'),
+('Hiroto', 'Mieda', 2, 2, 24, 'JPN'),
 ('Juan', 'Martinez', 3, 2, 27, 'VEN'),
 ('Tatsuya', 'Yoshida', 4, 2, 24, 'JPN'),
 ('Manuel', 'Moreno', 5, 2, 25, 'MEX'),
-('Ethan', 'Smith', 6, 2, 22, 'CAN'),
+('Ethan', 'Smith', 6, 2, 22, 'USA'),
 ('Minho', 'Park', 7, 2, 23, 'KOR'),
-('Rafael', 'Fernandez', 8, 2, 21, 'PUR'),
+('Hasitaka', 'Mori', 8, 2, 24, 'JPN'),
 ('David', 'Soto', 9, 2, 24, 'PAN'),
 ('Felipe', 'Cortez', 7, 2, 24, 'COL'),
-('Daniel', 'Schneider', 9, 2, 27, 'GER');
+('Daniel', 'Schneider', 9, 2, 27, 'USA');
 
 -- Team 3: Stormbreakers
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Evan', 'Scott', 1, 3, 25, 'USA'),
-('Carlos', 'Perez', 1, 3, 28, 'DOM'),
-('Luis', 'Gonzalez', 2, 3, 30, 'CUB'),
-('Nicolas', 'Ramirez', 3, 3, 26, 'VEN'),
-('Sho', 'Takahashi', 4, 3, 24, 'JPN'),
-('Pedro', 'Diaz', 5, 3, 27, 'MEX'),
-('Lucas', 'Clark', 6, 3, 23, 'CAN'),
-('Jin', 'Lee', 7, 3, 23, 'KOR'),
-('Rafael', 'Martinez', 8, 3, 21, 'PUR'),
-('Andres', 'Silva', 9, 3, 24, 'PAN'),
-('Carlos', 'Mendoza', 2, 3, 25, 'COL'),
-('Marco', 'Lima', 7, 3, 27, 'BRA');
-
+('Evan', 'Dupont', 1, 3, 25, 'FRA'),
+('Carlos', 'Kovacs', 1, 3, 28, 'HUN'),
+('Luis', 'Mutiso', 2, 3, 30, 'KEN'),
+('Nicolas', 'Alvarado', 3, 3, 26, 'BOL'),
+('Andres', 'Kowalski', 4, 3, 24, 'POL'),
+('Pedro', 'Schmidt', 5, 3, 27, 'SUI'),
+('Lucas', 'Nikolic', 6, 3, 23, 'SRB'),
+('Jin', 'Zewde', 7, 3, 23, 'ETH'),
+('Rafael', 'Mendy', 8, 3, 21, 'SEN'),
+('Sho', 'Nakamura', 9, 3, 24, 'JPN'),
+('Carlos', 'Fernandez', 2, 3, 25, 'ARG'),
+('Marco', 'Adeyemi', 1, 3, 27, 'NGA');
 
 -- Team 4: Guardians of the Galaxy
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
 ('Ethan', 'Johnson', 1, 4, 24, 'USA'),
-('Carlos', 'Morales', 1, 4, 29, 'DOM'),
-('Jorge', 'Diaz', 2, 4, 27, 'CUB'),
-('Luis', 'Rodriguez', 3, 4, 28, 'VEN'),
+('Ryan', 'Smith', 1, 4, 29, 'USA'),
+('Carlos', 'Morales', 2, 4, 27, 'CUB'),
+('Tim', 'Walker', 3, 4, 28, 'USA'),
 ('Ryuji', 'Tanaka', 4, 4, 23, 'JPN'),
-('Felipe', 'Hernandez', 5, 4, 26, 'MEX'),
-('David', 'Garcia', 6, 4, 25, 'CAN'),
+('James', 'Williams', 5, 4, 26, 'USA'),
+('David', 'Garcia', 6, 4, 25, 'USA'),
 ('Hyun', 'Kim', 7, 4, 22, 'KOR'),
-('Omar', 'Perez', 8, 4, 21, 'PUR'),
-('Juan', 'Fernandez', 9, 4, 24, 'PAN'),
-('Diego', 'Mendoza', 5, 4, 23, 'COL'),
+('Omar', 'Viciedo', 8, 4, 21, 'DOM'),
+('Casey', 'Folk', 9, 4, 24, 'USA'),
+('Diego', 'Morales', 5, 4, 23, 'MEX'),
 ('Matteo', 'Bianchi', 5, 4, 27, 'ITA');
 
 -- Team 5: Flyers
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Ryan', 'Green', 1, 5, 22, 'USA'),
-('Jose', 'Martinez', 1, 5, 28, 'DOM'),
-('Carlos', 'Serrano', 2, 5, 30, 'CUB'),
-('Victor', 'Hernandez', 3, 5, 27, 'VEN'),
-('Koji', 'Matsumoto', 4, 5, 24, 'JPN'),
-('Luis', 'Garcia', 5, 5, 26, 'MEX'),
-('Andrew', 'Walker', 6, 5, 23, 'CAN'),
-('Jin', 'Cho', 7, 5, 22, 'KOR'),
-('Carlos', 'Reyes', 8, 5, 21, 'PUR'),
-('Rafael', 'Martinez', 9, 5, 24, 'PAN'),
-('Ricardo', 'Fernandez', 8, 5, 25, 'COL'),
-('Pablo', 'Lopez', 7, 5, 27, 'ESP');
+('Luca', 'Ricci', 1, 5, 22, 'ITA'),
+('Santiago', 'Martinez', 1, 5, 28, 'ARG'),
+('Masataka', 'Yumori', 2, 5, 30, 'JPN'),
+('Ichiro', 'Yoshida', 3, 5, 27, 'JPN'),
+('Giovanni', 'Bianchi', 4, 5, 24, 'ITA'),
+('Emilio', 'Lopez', 5, 5, 26, 'MEX'),
+('Liam', 'Williams', 6, 5, 23, 'USA'),
+('Jiwon', 'Park', 7, 5, 22, 'KOR'),
+('Jim', 'Ray', 8, 5, 21, 'USA'),
+('Marcos', 'Jiminez', 9, 5, 24, 'BRA'),
+('Andres', 'Garcia', 4, 5, 25, 'PER'),
+('Diego', 'Gomez', 1, 5, 27, 'ESP');
 
 -- Team 6: Knights
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Jack', 'Miller', 1, 6, 25, 'USA'),
-('Eduardo', 'Gomez', 1, 6, 28, 'DOM'),
-('Carlos', 'Sanchez', 2, 6, 30, 'CUB'),
-('Luis', 'Castro', 3, 6, 27, 'VEN'),
-('Hiroshi', 'Yamamoto', 4, 6, 24, 'JPN'),
-('Rafael', 'Moreno', 5, 6, 26, 'MEX'),
-('Oliver', 'Johnson', 6, 6, 23, 'CAN'),
-('Jiho', 'Kim', 7, 6, 22, 'KOR'),
-('Antonio', 'Perez', 8, 6, 21, 'PUR'),
-('Emilio', 'Lopez', 9, 6, 24, 'PAN'),
-('Carlos', 'Mendoza', 4, 6, 25, 'COL'),
-('Marco', 'Silva', 3, 6, 27, 'BRA');
+('Alexander', 'Brown', 1, 6, 25, 'GBR'),
+('Juan', 'Rodriguez', 1, 6, 28, 'ESP'),
+('Mateo', 'Fernandez', 2, 6, 30, 'ARG'),
+('Yuki', 'Tanaka', 3, 6, 27, 'JPN'),
+('Jeffrey', 'Lancelot', 4, 6, 24, 'GBR'),
+('Luca', 'Ricci', 5, 6, 26, 'ITA'),
+('Ravi', 'Patel', 6, 6, 23, 'IND'),
+('Jiwon', 'Park', 7, 6, 22, 'KOR'),
+('Carlos', 'Lopez', 8, 6, 21, 'MEX'),
+('Matthew', 'Monaghan', 9, 6, 24, 'GBR'),
+('Dmitri', 'Ivanov', 4, 6, 25, 'RUS'),
+('James', 'Miller', 3, 6, 27, 'GBR');
 
 -- Team 7: Blaze Hounds
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Tyler', 'Johnson', 1, 7, 25, 'USA'),
-('Pedro', 'Gonzalez', 2, 7, 28, 'DOM'),
-('Roberto', 'Diaz', 3, 7, 26, 'CUB'),
-('Victor', 'Rodriguez', 4, 7, 30, 'VEN'),
-('Koji', 'Yamamoto', 5, 7, 29, 'JPN'),
-('Hector', 'Moreno', 6, 7, 27, 'MEX'),
-('David', 'Richards', 7, 7, 24, 'CAN'),
-('Jin', 'Park', 8, 7, 25, 'KOR'),
-('Liam', 'Reyes', 9, 7, 22, 'PUR'),
-('Andres', 'Martinez', 9, 7, 21, 'PAN'),
-('Tomás', 'Valencia', 6, 7, 24, 'COL'),
-('Bastian', 'Schmidt', 4, 7, 27, 'GER');
+('Samson', 'Sok', 1, 7, 24, 'THA'),
+('Juan', 'Perez', 1, 7, 28, 'ESP'), 
+('Diego', 'Rodriguez', 2, 7, 26, 'ARG'),
+('Carlos', 'Diaz', 3, 7, 21, 'PAN'),
+('Ryu', 'Takahashi', 4, 7, 30, 'JPN'),
+('Tetsuya', 'Hamada', 5, 7, 29, 'JPN'),
+('Juan', 'Morales', 6, 7, 27, 'NIC'),
+('Liam', 'Evans', 7, 7, 25, 'USA'),
+('Hyeon', 'Kim', 8, 7, 25, 'KOR'),
+('Juan', 'Torres', 9, 7, 22, 'CUB'),
+('Javier', 'Hernandez', 1, 7, 24, 'VEN'),
+('Nils', 'Bauer', 4, 7, 27, 'GER');
 
 -- Team 8: Werewolves
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Eli', 'Martinez', 1, 8, 23, 'USA'),
+('David', 'Manningham', 1, 8, 23, 'USA'),
 ('Jose', 'Hernandez', 1, 8, 28, 'DOM'),
 ('Carlos', 'Perez', 2, 8, 30, 'CUB'),
 ('Victor', 'Garcia', 3, 8, 27, 'VEN'),
 ('Takumi', 'Kobayashi', 4, 8, 24, 'JPN'),
 ('Luis', 'Mendoza', 5, 8, 26, 'MEX'),
-('Michael', 'Johnson', 6, 8, 23, 'CAN'),
+('Michael', 'Johnson', 6, 8, 23, 'USA'),
 ('Jin', 'Kim', 7, 8, 22, 'KOR'),
-('Carlos', 'Martinez', 8, 8, 21, 'PUR'),
+('Dick', 'Applebee', 8, 8, 21, 'USA'),
 ('Esteban', 'Rodriguez', 9, 8, 24, 'PAN'),
 ('Felipe', 'Cortez', 3, 8, 24, 'COL'),
-('David', 'Schneider', 9, 8, 27, 'GER');
+('David', 'Schneider', 9, 8, 27, 'USA');
 
 -- Team 9: Dragons
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Andrew', 'Moore', 1, 9, 22, 'USA'),
-('Luis', 'Garcia', 1, 9, 28, 'DOM'),
-('Jose', 'Serrano', 2, 9, 30, 'CUB'),
-('Juan', 'Rodriguez', 3, 9, 27, 'VEN'),
-('Shinji', 'Fujimoto', 4, 9, 24, 'JPN'),
-('Eduardo', 'Martinez', 5, 9, 25, 'MEX'),
-('Tyler', 'Brown', 6, 9, 23, 'CAN'),
-('Minseok', 'Jung', 7, 9, 22, 'KOR'),
-('Rafael', 'Perez', 8, 9, 21, 'PUR'),
-('Carlos', 'Fernandez', 9, 9, 24, 'PAN'),
-('Santiago', 'Lopez', 5, 9, 25, 'COL'),
-('Luca', 'Bianchi', 4, 9, 27, 'ITA');
+('Carlos', 'Perez', 1, 9, 22, 'PHI'),
+('Luca', 'Gonzalez', 1, 9, 28, 'PER'),
+('Liam', 'Bianchi', 2, 9, 30, 'ITA'),
+('Nia', 'Smith', 3, 9, 27, 'ZAF'),
+('Shinji', 'Rodriguez', 4, 9, 24, 'JPN'),
+('Juan', 'Taylor', 5, 9, 25, 'TTO'),
+('Eduardo', 'Kumar', 6, 9, 23, 'IND'),
+('Seungjin', 'Martinez', 7, 9, 22, 'BRA'),
+('Tyler', 'Mendes', 8, 9, 21, 'USA'),
+('Diana', 'Lopez', 9, 9, 24, 'MEX'),
+('Boris', 'Chang', 1, 9, 25, 'CHN'),
+('Victor', 'Santos', 4, 9, 27, 'CUB');
 
 -- Team 10: Pirates
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
@@ -148,13 +147,13 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Fernando', 'Lopez', 2, 10, 30, 'CUB'),
 ('Ricardo', 'Hernandez', 3, 10, 27, 'VEN'),
 ('Yuji', 'Ishida', 4, 10, 24, 'JPN'),
-('Antonio', 'Silva', 5, 10, 26, 'MEX'),
-('Ethan', 'Davis', 6, 10, 23, 'CAN'),
+('Antonio', 'Freeman', 5, 10, 26, 'USA'),
+('Ethan', 'Davis', 6, 10, 23, 'USA'),
 ('Jiwon', 'Choi', 7, 10, 22, 'KOR'),
-('Carlos', 'Reyes', 8, 10, 21, 'PUR'),
-('Esteban', 'Lopez', 9, 10, 24, 'PAN'),
-('Felipe', 'Mendoza', 9, 10, 25, 'COL'),
-('Matteo', 'Rossi', 7, 10, 27, 'ITA');
+('Carlos', 'Reyes', 8, 10, 21, 'THA'),
+('Esteban', 'Lopez', 9, 10, 24, 'GHA'),
+('Felipe', 'Mendoza', 9, 10, 25, 'KEN'),
+('Matteo', 'Rossi', 7, 10, 27, 'BRA');
 
 
 ----------------------------------------------------------------------------------------
@@ -162,154 +161,155 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ----------------------------------------------------------------------------------------
 -- Team 11: Vortex Vipers
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Evan', 'Smith', 1, 1, 23, 'USA'),
-('Pedro', 'Alvarez', 1, 1, 28, 'DOM'),
-('Carlos', 'Gutierrez', 2, 1, 30, 'CUB'),
-('Luis', 'Rodriguez', 3, 1, 27, 'VEN'),
-('Hiroshi', 'Takahashi', 4, 1, 24, 'JPN'),
-('Juan', 'Martinez', 5, 1, 26, 'MEX'),
-('Ryan', 'Williams', 6, 1, 23, 'CAN'),
-('Jiho', 'Park', 7, 1, 22, 'KOR'),
-('Antonio', 'Mendoza', 8, 1, 21, 'PUR'),
-('Emilio', 'Lopez', 9, 1, 24, 'PAN'),
-('Carlos', 'Fernandez', 4, 1, 25, 'COL'),
-('Marco', 'Rossi', 8, 1, 27, 'ITA');
+('Hiroshi', 'Kobayashi', 1, 11, 24, 'JPN'),
+('Juan', 'Martinez', 1, 11, 26, 'CUB'),
+('Carlos', 'Diaz', 2, 11, 30, 'ARG'),
+('Luis', 'Santos', 3, 11, 27, 'BRA'),
+('Evan', 'O’Connor', 4, 11, 23, 'IRL'),
+('Pedro', 'Jimenez', 5, 11, 28, 'PHI'),
+('Ryan', 'Nguyen', 6, 11, 23, 'VNM'),
+('Jiho', 'Choi', 7, 11, 22, 'KOR'),
+('Antonio', 'Garcia', 8, 11, 21, 'ESP'),
+('Emilio', 'Lopez', 9, 11, 24, 'COL'),
+('Takeshi', 'Saito', 4, 11, 25, 'JPN'),
+('Kenji', 'Takahashi', 8, 11, 27, 'JPN');
 
 -- Team 12: Tempest Titans
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Ethan', 'Johnson', 1, 2, 24, 'USA'),
-('Carlos', 'Gomez', 1, 2, 29, 'DOM'),
-('Javier', 'Martinez', 2, 2, 30, 'CUB'),
-('Victor', 'Perez', 3, 2, 26, 'VEN'),
-('Takeshi', 'Fujimoto', 4, 2, 23, 'JPN'),
-('Jose', 'Mendez', 5, 2, 25, 'MEX'),
-('Oliver', 'Brown', 6, 2, 22, 'CAN'),
-('Jin', 'Kim', 7, 2, 23, 'KOR'),
-('Esteban', 'Rodriguez', 8, 2, 21, 'PUR'),
-('Diego', 'Martinez', 9, 2, 24, 'PAN'),
-('Luis', 'Martinez', 2, 2, 25, 'COL'),
-('Nico', 'Bianchi', 2, 2, 27, 'ITA');
+('Liam', 'O’Connor', 1, 12, 24, 'USA'),
+('Juan', 'Rodriguez', 1, 12, 29, 'ESP'),
+('Carlos', 'Jimenez', 2, 12, 30, 'PHI'),
+('Victor', 'Santos', 3, 12, 26, 'BRA'),
+('Takeshi', 'Nakamura', 4, 12, 23, 'JPN'),
+('Jose', 'Alvarez', 5, 12, 25, 'ARG'),
+('Oliver', 'Wilson', 6, 12, 22, 'USA'),
+('Jin', 'Park', 7, 12, 23, 'KOR'),
+('Esteban', 'Gutierrez', 9, 12, 21, 'CUB'),
+('Dominick', 'Olhava', 8, 12, 21, 'USA'),
+('Luis', 'Martinez', 2, 12, 25, 'TTO'),
+('Nico', 'Bianchi', 2, 12, 27, 'ITA');
 
 -- Team 13: Quasar Comets
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Oliver', 'Taylor', 1, 3, 23, 'USA'),
-('Juan', 'Gonzalez', 1, 3, 28, 'DOM'),
-('Carlos', 'Perez', 2, 3, 30, 'CUB'),
-('Javier', 'Lopez', 3, 3, 27, 'VEN'),
-('Takashi', 'Sato', 4, 3, 24, 'JPN'),
-('Luis', 'Hernandez', 5, 3, 26, 'MEX'),
-('Ryan', 'Johnson', 6, 3, 23, 'CAN'),
-('Minseok', 'Lee', 7, 3, 22, 'KOR'),
-('Carlos', 'Gonzalez', 8, 3, 21, 'PUR'),
-('Felipe', 'Rodriguez', 9, 3, 24, 'PAN'),
-('Santiago', 'Mendez', 7, 3, 25, 'COL'),
-('Matteo', 'Rossi', 8, 3, 27, 'ITA');
+('Liam', 'O’Connor', 1, 13, 23, 'IRL'),
+('Juan', 'Rodriguez', 1, 13, 28, 'ESP'),
+('Carlos', 'Jimenez', 2, 13, 30, 'PHI'),
+('Javier', 'Moreno', 3, 13, 27, 'VEN'),
+('Hiroshi', 'Tanaka', 4, 13, 24, 'JPN'),
+('Andres', 'Gomez', 5, 13, 26, 'COL'),
+('Ryan', 'Miller', 6, 13, 23, 'USA'),
+('Jiwon', 'Park', 7, 13, 22, 'KOR'),
+('Carlos', 'Vega', 8, 13, 21, 'CUB'),
+('Felipe', 'Alvarez', 9, 13, 24, 'PER'),
+('Santiago', 'Diaz', 7, 13, 25, 'ARG'),
+('James', 'Thompson', 6, 13, 25, 'USA');
+
 
 -- Team 14: Phantoms
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Isaac', 'Davis', 1, 4, 22, 'USA'),
-('Carlos', 'Garcia', 1, 4, 29, 'DOM'),
-('Jose', 'Serrano', 2, 4, 30, 'CUB'),
-('Luis', 'Hernandez', 3, 4, 27, 'VEN'),
-('Shinji', 'Tanaka', 4, 4, 24, 'JPN'),
-('Eduardo', 'Lopez', 5, 4, 26, 'MEX'),
-('Michael', 'Woods', 6, 4, 23, 'CAN'),
-('Jiho', 'Choi', 7, 4, 22, 'KOR'),
-('Antonio', 'Martinez', 8, 4, 21, 'PUR'),
-('Diego', 'Rodriguez', 9, 4, 24, 'PAN'),
-('Felipe', 'Perez', 3, 4, 25, 'COL'),
-('Luca', 'Bianchi', 6, 4, 27, 'ITA');
+('Ethan', 'Hughes', 1, 14, 22, 'AUS'),
+('Miguel', 'Mendez', 1, 14, 29, 'ARG'),
+('Carlos', 'Perez', 2, 14, 30, 'ESP'),
+('Jose', 'Castillo', 3, 14, 27, 'VEN'),
+('Shinji', 'Fujimoto', 4, 14, 24, 'JPN'),
+('Brad', 'Edwards', 5, 14, 26, 'USA'),
+('Liam', 'O’Connor', 6, 14, 23, 'IRL'),
+('Jiho', 'Kim', 7, 14, 22, 'KOR'),
+('Antonio', 'Reyes', 8, 14, 21, 'CUB'),
+('Cing', 'Kim', 9, 14, 24, 'KOR'),
+('Felipe', 'Gonzalez', 3, 14, 25, 'COL'),
+('Luca', 'Rossi', 6, 14, 27, 'ITA');
+
 
 -- Team 15: Eclipse
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Aiden', 'Scott', 1, 5, 23, 'USA'),
-('Carlos', 'Alvarez', 1, 5, 28, 'DOM'),
-('Rafael', 'Lopez', 2, 5, 30, 'CUB'),
-('Victor', 'Gonzalez', 3, 5, 26, 'VEN'),
-('Kenta', 'Nakamura', 4, 5, 24, 'JPN'),
-('Juan', 'Martinez', 5, 5, 25, 'MEX'),
-('Ryan', 'Taylor', 6, 5, 23, 'CAN'),
-('Jin', 'Park', 7, 5, 22, 'KOR'),
-('Carlos', 'Mendoza', 8, 5, 21, 'PUR'),
-('Esteban', 'Hernandez', 9, 5, 24, 'PAN'),
-('Luis', 'Cortes', 7, 5, 25, 'COL'),
-('Marco', 'Silva', 5, 5, 27, 'BRA');
+('Dylan', 'Smith', 1, 15, 23, 'USA'),
+('Carlos', 'Sanchez', 1, 15, 28, 'COL'),
+('Rafael', 'Martinez', 2, 15, 30, 'DOM'),
+('Victor', 'Pereira', 3, 15, 26, 'BRA'),
+('Hiroshi', 'Yamada', 4, 15, 24, 'JPN'),
+('Juan', 'Lopez', 5, 15, 25, 'MEX'),
+('Ryan', 'Singh', 6, 15, 23, 'IND'),
+('Minseok', 'Park', 7, 15, 22, 'KOR'),
+('Ming', 'Han', 8, 15, 21, 'CHN'),
+('Esteban', 'Zuniga', 9, 15, 24, 'PAN'),
+('Luca', 'Bianchi', 7, 15, 25, 'ITA'),
+('Marco', 'Costa', 5, 15, 27, 'ESP');
 
 -- Team 16: Aether Hawks
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Noah', 'Martinez', 1, 6, 24, 'USA'),
-('Pedro', 'Rodriguez', 1, 6, 29, 'DOM'),
-('Javier', 'Gomez', 2, 6, 30, 'CUB'),
-('Luis', 'Martinez', 3, 6, 27, 'VEN'),
-('Haruto', 'Takahashi', 4, 6, 24, 'JPN'),
-('Carlos', 'Hernandez', 5, 6, 26, 'MEX'),
-('Ethan', 'Williams', 6, 6, 23, 'CAN'),
-('Jiho', 'Lee', 7, 6, 22, 'KOR'),
-('Antonio', 'Gonzalez', 8, 6, 21, 'PUR'),
-('Emilio', 'Perez', 9, 6, 24, 'PAN'),
-('Carlos', 'Lopez', 2, 6, 25, 'COL'),
-('Matteo', 'Bianchi', 4, 6, 27, 'ITA');
+('Haruto', 'Takahashi', 1, 16, 24, 'JPN'),
+('Pedro', 'Rodriguez', 1, 16, 29, 'DOM'),
+('Javier', 'Gomez', 2, 16, 30, 'CUB'),
+('Luis', 'Martinez', 3, 16, 27, 'VEN'),
+('Noah', 'Martinez', 4, 16, 24, 'USA'), 
+('Carlos', 'Hernandez', 5, 16, 26, 'MEX'),
+('Ethan', 'Williams', 6, 16, 23, 'CAN'),
+('Jiho', 'Lee', 7, 16, 22, 'KOR'),
+('Antonio', 'Gonzalez', 8, 16, 21, 'PUR'),
+('Emilio', 'Perez', 9, 16, 24, 'PAN'),
+('Hiro', 'Mataka', 2, 16, 25, 'JPN'),
+('Matteo', 'Bianchi', 4, 16, 27, 'ITA');
 
 -- Team 17: Mystic Mirages
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Lucas', 'Taylor', 1, 7, 23, 'USA'),
-('Carlos', 'Martinez', 1, 7, 28, 'DOM'),
-('Jose', 'Perez', 2, 7, 30, 'CUB'),
-('Carlos', 'Rodriguez', 3, 7, 27, 'VEN'),
-('Yuki', 'Kobayashi', 4, 7, 24, 'JPN'),
-('Eduardo', 'Lopez', 5, 7, 26, 'MEX'),
-('Zachary', 'Johnson', 6, 7, 23, 'CAN'),
-('Minseok', 'Kim', 7, 7, 22, 'KOR'),
-('Felipe', 'Gonzalez', 8, 7, 21, 'PUR'),
-('Diego', 'Mendez', 9, 7, 24, 'PAN'),
-('Juan', 'Garcia', 2, 3, 25, 'COL'),
-('Matteo', 'Giordano', 5, 7, 27, 'ITA');
+('Minseok', 'Park', 1, 17, 22, 'KOR'),
+('Matteo', 'Bianchi', 1, 17, 27, 'ITA'),
+('Jose', 'Hernandez', 2, 17, 30, 'DOM'),
+('Carlos', 'Silva', 3, 17, 27, 'BRA'),
+('Yuki', 'Tanaka', 4, 17, 24, 'JPN'),
+('Eduardo', 'Martinez', 5, 17, 26, 'ARG'),
+('Zachary', 'Brown', 6, 17, 23, 'USA'),
+('Lucas', 'Johnson', 7, 17, 23, 'CAN'),
+('Felipe', 'Mendes', 8, 17, 21, 'BRA'),
+('Diego', 'Gonzalez', 9, 17, 24, 'CHL'),
+('Juan', 'Lopez', 2, 17, 25, 'COL'),
+('Carlos', 'Rodriguez', 5, 17, 28, 'MEX');
 
 -- Team 18: Trailblazers
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Eli', 'Brown', 1, 8, 23, 'USA'),
-('Carlos', 'Gomez', 1, 8, 29, 'DOM'),
-('Javier', 'Martinez', 2, 8, 30, 'CUB'),
-('Victor', 'Perez', 3, 8, 26, 'VEN'),
-('Takeshi', 'Fujimoto', 4, 8, 24, 'JPN'),
-('Jose', 'Mendez', 5, 8, 25, 'MEX'),
-('Oliver', 'Johnson', 6, 8, 22, 'CAN'),
-('Jin', 'Lee', 7, 8, 23, 'KOR'),
-('Antonio', 'Martinez', 8, 8, 21, 'PUR'),
-('Diego', 'Rodriguez', 9, 8, 24, 'PAN'),
-('Felipe', 'Perez', 8, 8, 25, 'COL'),
-('Luca', 'Bianchi', 9, 8, 27, 'ITA');
+('Jose', 'Mendez', 1, 18, 25, 'MEX'),
+('Felipe', 'Perez', 1, 18, 25, 'COL'),
+('Javier', 'Martinez', 2, 18, 30, 'CUB'),
+('Christian', 'Yamamoto', 3, 18, 26, 'JPN'),
+('Takeshi', 'Fujimoto', 4, 18, 24, 'JPN'),
+('Eli', 'Brown', 1, 18, 23, 'USA'),
+('Oliver', 'Johnson', 6, 18, 22, 'CAN'),
+('Jin', 'Lee-Ho', 7, 18, 23, 'KOR'),
+('Antonio', 'Martinez', 8, 18, 21, 'PUR'),
+('Diego', 'Rodriguez', 9, 18, 24, 'PAN'),
+('Carlos', 'Gomez', 8, 18, 29, 'DOM'),
+('Luca', 'Bianchi', 9, 18, 27, 'ITA');
 
 -- Team 19: Valkyries
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Isaac', 'Davis', 1, 9, 22, 'USA'),
-('Carlos', 'Alvarez', 1, 9, 28, 'DOM'),
-('Rafael', 'Lopez', 2, 9, 30, 'CUB'),
-('Victor', 'Gonzalez', 3, 9, 26, 'VEN'),
-('Kenta', 'Nakamura', 4, 9, 24, 'JPN'),
-('Juan', 'Martinez', 5, 9, 25, 'MEX'),
-('Ryan', 'Taylor', 6, 9, 23, 'CAN'),
-('Jin', 'Park', 7, 9, 22, 'KOR'),
-('Carlos', 'Mendoza', 8, 9, 21, 'PUR'),
-('Esteban', 'Hernandez', 9, 9, 24, 'PAN'),
-('Luis', 'Cortes', 6, 9, 25, 'COL'),
-('Marco', 'Silva', 5, 9, 27, 'BRA');
+('Esteban', 'Silva', 1, 19, 24, 'BRA'),
+('Ryan', 'Lee', 1, 19, 23, 'KOR'),
+('Rafael', 'Tay', 2, 19, 30, 'CHN'),
+('Victor', 'Martinez', 3, 19, 26, 'VEN'),
+('Kenta', 'Nakamura', 4, 19, 24, 'JPN'),
+('Juan', 'Lopez', 5, 19, 25, 'MEX'),
+('Carlos', 'Gomez', 6, 19, 28, 'ARG'),
+('Jin', 'Kang', 7, 19, 22, 'TUR'),
+('Carlos', 'Mendoza', 8, 19, 21, 'PER'),
+('Isaac', 'Cortes', 9, 19, 22, 'COL'),
+('Luis', 'Kozlov', 6, 19, 25, 'RUS'),
+('Matty', 'Chang', 5, 19, 27, 'CHN');
 
 -- Team 20: Iron Thunder
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Aiden', 'Scott', 1, 10, 23, 'USA'),
-('Carlos', 'Alvarez', 1, 10, 28, 'DOM'),
-('Rafael', 'Lopez', 2, 10, 30, 'CUB'),
-('Victor', 'Gonzalez', 3, 10, 26, 'VEN'),
-('Kenta', 'Nakamura', 4, 10, 24, 'JPN'),
-('Juan', 'Martinez', 5, 10, 25, 'MEX'),
-('Ryan', 'Taylor', 6, 10, 23, 'CAN'),
-('Jin', 'Park', 7, 10, 22, 'KOR'),
-('Carlos', 'Mendoza', 8, 10, 21, 'PUR'),
-('Esteban', 'Hernandez', 9, 10, 24, 'PAN'),
-('Luis', 'Cortes', 5, 10, 25, 'COL'),
-('Marco', 'Silva', 8, 10, 27, 'BRA');
-
+('Kenta', 'Tanaka', 1, 20, 23, 'JPN'),
+('Carlos', 'Garcia', 1, 20, 28, 'ESP'),
+('Rafael', 'Martinez', 2, 20, 30, 'ARG'),
+('Victor', 'Santos', 3, 20, 26, 'BRA'),
+('Kenta', 'Fujimoto', 4, 20, 24, 'JPN'),
+('Juan', 'Torres', 5, 20, 25, 'MEX'),
+('Ryan', 'Miller', 6, 20, 23, 'USA'),
+('Jin', 'Lee', 7, 20, 22, 'KOR'),
+('Carlos', 'Ramos', 8, 20, 21, 'COL'),
+('Esteban', 'Zuniga', 9, 20, 24, 'CRI'),
+('Luis', 'Fernandez', 5, 20, 25, 'CHL'),
+('Marco', 'Costa', 8, 20, 27, 'BRA');
 
 -- 60 Free Agent Players with FUN NAMES and NO TEAM (NULL)
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
@@ -372,8 +372,7 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Hunter', 'Vortex', 1, NULL, 26, 'UGA'),
 ('David', 'Stellar', 2, NULL, 28, 'TUR'),
 ('Aaron', 'Nova', 3, NULL, 27, 'BGR'),
-('Henry', 'Stratosphere', 4, NULL, 23, 'ARG'),
-('Jackson', 'Phoenix', 5, NULL, 29, 'BEL');
+('Henry', 'Stratosphere', 4, NULL, 23, 'ARG');
 
 
 SELECT * FROM Player WHERE Country_ID LIKE 'J%'AND Age >= 27;
