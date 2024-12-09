@@ -1,6 +1,6 @@
 USE baseball_game_db;
--- Inserting 12 players for each of the 20 base teams as well as 60 free agent players with no assigned team (NULL)!
--- 300 Players Total
+-- Inserting 12 players for each of the 20 base teams as well as 30 free agent players with no assigned team (NULL)!
+-- 270 Players Total
 
 ----------------------------------------------------------------------------------------
 -- AL Teams 
@@ -341,9 +341,9 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Hikaru', 'Takahashi', 8, NULL, 28, 'JPN'),
 ('Adam', 'Sterling', 9, NULL, 24, 'USA'),
 ('Ben', 'Ryan', 1, NULL, 27, 'USA'),
-('Adam', 'Jones', 2, NULL, 30, 'USA'),
+('Adam', 'Jones', 8, NULL, 30, 'USA'),
 ('Javier', 'Caraballo', 3, NULL, 22, 'VEN');
 
 
 
-SELECT * FROM Player WHERE Country_ID LIKE 'J%'AND Age >= 27;
+SELECT * FROM Player WHERE Country_ID LIKE 'J%'AND Age >= 25 ORDER BY Age DESC;
