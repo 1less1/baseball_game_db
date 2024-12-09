@@ -10,7 +10,7 @@ Clone the REPO with: https://github.com/1less1/baseball_game_db.git
 4. **Team**
 5. **Coach**
 6. **Player**
-7. Ratings
+7. **Ratings**
 8. Season
 9. Game
 10. GameStats
