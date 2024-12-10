@@ -1,5 +1,12 @@
 USE baseball_game_db;
 
+-- Insert statements set the designated team to play at Home.
+-- That Home team then matches up with every other available team as Away with a total of 19 games.
+
+-- Each team ends up playing 38 total games (38 * 20 = 760 games total)
+-- Math: 19 matchups in their designated insert statement + (1 extra matchup * 19 other team inserts) = 38
+
+-- There are 380 unique "Game" entities in the base table 
 
 ----------------------------------------------------------------------------------------
 -- AL Teams 
