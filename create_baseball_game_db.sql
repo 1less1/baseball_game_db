@@ -245,10 +245,10 @@ SHOW WARNINGS;
 -- -----------------------------------------------------
 -- Table `gamestats`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `gamestats` ;
+DROP TABLE IF EXISTS `game_stats` ;
 
 SHOW WARNINGS;
-CREATE TABLE IF NOT EXISTS `gamestats` (
+CREATE TABLE IF NOT EXISTS `game_stats` (
   `Player_ID` INT NOT NULL,
   `Season_ID` INT NOT NULL,
   `Games_Played` INT NULL DEFAULT '0',
@@ -259,16 +259,15 @@ CREATE TABLE IF NOT EXISTS `gamestats` (
   `Innings_Pitched` INT NULL DEFAULT '0',
   `Earned_Runs` INT NULL DEFAULT '0',
   `Strikeouts` INT NULL DEFAULT '0',
-  `Walks` INT NULL DEFAULT '0',
   PRIMARY KEY (`Player_ID`, `Season_ID`),
   INDEX `fk_Stats_Player1_idx` (`Player_ID` ASC) VISIBLE,
   INDEX `fk_Stats_Season1_idx` (`Season_ID` ASC) VISIBLE,
-  CONSTRAINT `FK_Gamestats_Player`
+  CONSTRAINT `FK_Game_Stats_Player`
     FOREIGN KEY (`Player_ID`)
     REFERENCES `player` (`Player_ID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `FK_Gamestats_Season`
+  CONSTRAINT `FK_Game_Stats_Season`
     FOREIGN KEY (`Season_ID`)
     REFERENCES `season` (`Season_ID`)
     ON DELETE CASCADE

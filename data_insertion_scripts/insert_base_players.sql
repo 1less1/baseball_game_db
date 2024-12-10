@@ -130,7 +130,7 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Carlos', 'Perez', 1, 9, 22, 'PHI'),
 ('Luca', 'Gonzalez', 1, 9, 28, 'PER'),
 ('Liam', 'Bianchi', 2, 9, 30, 'ITA'),
-('Nia', 'Smith', 3, 9, 27, 'ZAF'),
+('Josh', 'Smith', 3, 9, 27, 'USA'),
 ('Shinji', 'Rodriguez', 4, 9, 24, 'JPN'),
 ('Juan', 'Taylor', 5, 9, 25, 'TTO'),
 ('Eduardo', 'Kumar', 6, 9, 23, 'IND'),
@@ -191,7 +191,7 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 
 -- Team 13: Quasar Comets
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
-('Liam', 'O’Connor', 1, 13, 23, 'IRL'),
+('Brady', 'Sullivan', 1, 13, 23, 'USA'),
 ('Juan', 'Rodriguez', 1, 13, 28, 'ESP'),
 ('Hiroshi', 'Tanaka', 2, 13, 24, 'JPN'),
 ('Javier', 'Moreno', 3, 13, 27, 'VEN'),
@@ -213,7 +213,7 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Jose', 'Castillo', 3, 14, 27, 'VEN'),
 ('Shinji', 'Fujimoto', 4, 14, 24, 'JPN'),
 ('Brad', 'Edwards', 5, 14, 26, 'USA'),
-('Liam', 'O’Connor', 6, 14, 23, 'IRL'),
+('Byron', 'Haskins', 6, 14, 23, 'USA'),
 ('Jiho', 'Kim', 7, 14, 22, 'KOR'),
 ('Antonio', 'Reyes', 8, 14, 21, 'CUB'),
 ('Cing', 'Kim', 9, 14, 24, 'KOR'),
@@ -233,7 +233,7 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Minseok', 'Park', 7, 15, 22, 'KOR'),
 ('Ming', 'Han', 8, 15, 21, 'CHN'),
 ('Esteban', 'Zuniga', 9, 15, 24, 'PAN'),
-('Luca', 'Bianchi', 7, 15, 25, 'ITA'),
+('Brandon', 'Beckham', 7, 15, 25, 'USA'),
 ('Marco', 'Costa', 5, 15, 27, 'ESP');
 
 -- Team 16: Aether Hawks
@@ -249,7 +249,7 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Antonio', 'Gonzalez', 8, 16, 21, 'PUR'),
 ('Emilio', 'Perez', 9, 16, 24, 'PAN'),
 ('Hiro', 'Mataka', 2, 16, 25, 'JPN'),
-('Matteo', 'Bianchi', 4, 16, 27, 'ITA');
+('Matteo', 'Luzendo', 4, 16, 27, 'ITA');
 
 -- Team 17: Mystic Mirages
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
@@ -291,7 +291,7 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Juan', 'Lopez', 5, 19, 25, 'MEX'),
 ('Carlos', 'Gomez', 6, 19, 28, 'ARG'),
 ('Jin', 'Kang', 7, 19, 22, 'TUR'),
-('Carlos', 'Mendoza', 8, 19, 21, 'PER'),
+('JT', 'Mendoza', 8, 19, 21, 'PER'),
 ('Isaac', 'Cortes', 9, 19, 22, 'COL'),
 ('Luis', 'Kozlov', 6, 19, 25, 'RUS'),
 ('Matty', 'Chang', 5, 19, 27, 'CHN');
@@ -299,17 +299,17 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 -- Team 20: Iron Thunder
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
 ('Yoshinobo', 'Tanaka', 1, 20, 23, 'JPN'),
-('Carlos', 'Garcia', 1, 20, 28, 'ESP'),
+('Dom', 'Cruz', 1, 20, 28, 'PHI'),
 ('Rafael', 'Martinez', 2, 20, 30, 'ARG'),
 ('Victor', 'Santos', 3, 20, 26, 'BRA'),
 ('Carlos', 'Ramos', 4, 20, 21, 'COL'),
 ('Juan', 'Torres', 5, 20, 25, 'MEX'),
-('Ryan', 'Miller', 6, 20, 23, 'USA'),
+('Derrick', 'Benter', 6, 20, 23, 'USA'),
 ('Jin', 'Lee', 7, 20, 22, 'KOR'),
 ('Kenta', 'Fujimoto', 8, 20, 24, 'JPN'),
 ('Esteban', 'Zuniga', 9, 20, 24, 'CRI'),
 ('Luis', 'Fernandez', 5, 20, 25, 'CHL'),
-('Marco', 'Costa', 8, 20, 27, 'BRA');
+('TJ', 'Henning', 8, 20, 27, 'USA');
 
 -- 30 Free Agent Players with FUN NAMES and NO TEAM (NULL)
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
