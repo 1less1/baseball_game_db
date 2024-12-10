@@ -15,7 +15,7 @@ Clone the REPO with: https://github.com/1less1/baseball_game_db.git
 7. **Ratings**
 8. **Season**
 9. **Game**
-10. GameStats  
+10. **GameStats**  
 -I am going to want to total runs scored in the game table for each team and against each team  
 -Then use that to give random stats to each player for RBIs and Earned Runs and Stuff!
 
