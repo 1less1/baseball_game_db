@@ -145,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `game` (
   `Away_Team` INT NULL DEFAULT NULL,
   `Away_Score` TINYINT NOT NULL,
   `Winner` INT NULL DEFAULT NULL,
+  `Loser` INT NULL DEFAULT NULL,
   PRIMARY KEY (`Game_ID`),
   UNIQUE INDEX `GameID_UNIQUE` (`Game_ID` ASC) VISIBLE,
   UNIQUE INDEX `unique_matchup` (`Season_ID`, `Home_Team`, `Away_Team`) VISIBLE,
@@ -171,7 +172,12 @@ CREATE TABLE IF NOT EXISTS `game` (
     FOREIGN KEY (`Winner`)
     REFERENCES `team` (`Team_ID`)
     ON DELETE SET NULL
-    ON UPDATE CASCADE) 
+    ON UPDATE CASCADE,
+    CONSTRAINT `FK_Game_Loser`
+    FOREIGN KEY (`Loser`)
+    REFERENCES `team` (`Team_ID`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
