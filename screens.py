@@ -37,9 +37,7 @@ def transition():
 
 # Screen Procedures --------------------------------------
 
-
-
-def start_screen(navigator):
+def start_game(navigator):
     clear_screen()
     print("Welcome to Fantasy Baseball!")
     print(baseball_art_large)
