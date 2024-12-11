@@ -305,6 +305,8 @@ INSERT INTO game_stats (Player_ID, Season_ID, Games_Played, At_Bats, Hits, RBIs,
 
 
 -- Complex Query to Pull First and Last name of certain players that meet certain criteria in game_stats 
+
+/*
 SELECT 
     p.First_Name AS First, 
     p.Last_Name AS Last,
@@ -317,3 +319,4 @@ ON
     p.Player_ID = gs.Player_ID
 WHERE 
     (gs.Hits / gs.At_Bats > 0.300) AND gs.RBIs >= 50;
+*/

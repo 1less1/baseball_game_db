@@ -26,5 +26,5 @@ INSERT INTO team (Name, Home_Town, League, Salary_Cap, Stadium_ID) VALUES
 ('Valkyries', 'Watchtower City', 'NL', 7500000.00, 42),
 ('Iron Thunder', 'Forge Town', 'NL', 7200000.00, 47);
 
-SELECT * FROM Team WHERE League = 'AL';
-SELECT * FROM Team WHERE Stadium_ID IN (SELECT Stadium_ID FROM stadium WHERE Field_Size >= 400);
+-- SELECT * FROM Team WHERE League = 'AL';
+-- SELECT * FROM Team WHERE Stadium_ID IN (SELECT Stadium_ID FROM stadium WHERE Field_Size >= 400);

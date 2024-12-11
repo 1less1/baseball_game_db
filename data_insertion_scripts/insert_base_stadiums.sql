@@ -53,4 +53,4 @@ INSERT INTO stadium (Name, Field_Size, Ticket_Cost, Max_Capacity) VALUES
 ('Eclipse Edge', 375, 21.75, 14000),
 ('Stormspire Stadium', 385, 25.50, 15000);
 
-SELECT * FROM Stadium WHERE Field_Size > 380;
+-- SELECT * FROM Stadium WHERE Field_Size > 380;

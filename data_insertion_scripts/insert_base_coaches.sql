@@ -55,4 +55,4 @@ INSERT INTO coach (First_Name, Last_Name, Team_ID, Motivator) VALUES
 ('Caden', 'Foster', NULL, NULL);
 
 
-SELECT * FROM Coach WHERE Motivator IS NULL;
+-- SELECT * FROM Coach WHERE Motivator IS NULL;

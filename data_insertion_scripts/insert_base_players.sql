@@ -2,9 +2,11 @@ USE baseball_game_db;
 -- Inserting 12 players for each of the 20 base teams as well as 30 free agent players with no assigned team (NULL)!
 -- 270 Players Total
 
-----------------------------------------------------------------------------------------
+
+-- --------------------------------------------------------------------------------------
 -- AL Teams 
-----------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------
+
 -- Team 1: Crushers
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
 ('Mitchell', 'Walker', 1, 1, 26, 'USA'),
@@ -156,9 +158,11 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 ('Matteo', 'Rossi', 7, 10, 27, 'BRA');
 
 
-----------------------------------------------------------------------------------------
+
+-- --------------------------------------------------------------------------------------
 -- NL Teams 
-----------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------
+
 -- Team 11: Vortex Vipers
 INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
 ('Hiroshi', 'Kobayashi', 1, 11, 24, 'JPN'),
@@ -346,4 +350,4 @@ INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID
 
 
 
-SELECT * FROM Player WHERE Country_ID LIKE 'J%'AND Age >= 25 ORDER BY Age DESC;
+-- SELECT * FROM Player WHERE Country_ID LIKE 'J%'AND Age >= 25 ORDER BY Age DESC;

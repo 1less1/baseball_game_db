@@ -12,5 +12,5 @@ INSERT INTO position (Position_ID, Code, Name) VALUES
 (8, 'CF', 'Center Field'),
 (9, 'RF', 'Right Field');
 
-SELECT * FROM position;
+-- SELECT * FROM position;
 

@@ -103,4 +103,4 @@ INSERT INTO countries (Country_ID, Country_Name) VALUES
 ('TLS', 'Timor-Leste'),
 ('FRA', 'France');
 
-SELECT * FROM Countries WHERE Country_ID LIKE 'C%';
+-- SELECT * FROM Countries WHERE Country_ID LIKE 'C%';

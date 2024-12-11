@@ -4,4 +4,4 @@ USE baseball_game_db;
 INSERT INTO `season` (`Year`) VALUES
 (2023);
 
-SELECT * FROM Season;
+-- SELECT * FROM Season;

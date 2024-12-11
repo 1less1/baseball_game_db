@@ -336,7 +336,7 @@ INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_N
 (269, 78, 81, 74, 72, 4, 5, 6),         -- Adam Jones (Outfielder)
 (270, 75, 80, 72, 78, 5, 6, 7);         -- Javier Caraballo (First Baseman)
 
-SELECT * FROM Ratings WHERE Contact > 90 and Power > 85;
+-- SELECT * FROM Ratings WHERE Contact > 90 and Power > 85;
 
 
 

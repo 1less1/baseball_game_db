@@ -8,9 +8,11 @@ USE baseball_game_db;
 
 -- There are 380 unique "Game" entities in the base table 
 
-----------------------------------------------------------------------------------------
+
+-- --------------------------------------------------------------------------------------
 -- AL Teams 
-----------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------
+
 -- Team 1: Crushers
 INSERT INTO `game` (`Season_ID`, `Date`, `Home_Team`, `Home_Score`, `Away_Team`, `Away_Score`, `Winner`, `Loser`) VALUES
 (1, '2023-09-06', 1, 8, 2, 7, 1, 2), -- Home Team: 1 => 8, Away Team: 2 => 7
@@ -233,9 +235,10 @@ INSERT INTO `game` (`Season_ID`, `Date`, `Home_Team`, `Home_Score`, `Away_Team`,
 (1, '2023-12-06', 10, 13, 20, 4, 10, 20); -- Home Team: 10 => 13, Away Team: 20 => 4
 
 
-----------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------
 -- NL Teams 
-----------------------------------------------------------------------------------------
+-- --------------------------------------------------------------------------------------
+
 -- Team 11: Vortex Vipers
 INSERT INTO `game` (`Season_ID`, `Date`, `Home_Team`, `Home_Score`, `Away_Team`, `Away_Score`, `Winner`, `Loser`) VALUES
 (1, '2023-08-21', 11, 12, 1, 2, 11, 1), -- Home Team: 11 => 12, Away Team: 1 => 2
@@ -489,6 +492,7 @@ SELECT COUNT(*) FROM Game;
 */
 
 -- This Query grabs most of its data from the game table and displays Win and Loss counts for every team!
+/*
 SELECT 
     t.Team_ID,
     t.name AS Team_Name,
@@ -498,3 +502,4 @@ FROM
     team t
 ORDER BY 
     t.Team_ID;
+*/

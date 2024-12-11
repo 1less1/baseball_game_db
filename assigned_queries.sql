@@ -8,3 +8,8 @@ WHERE s.field_size >= 380;
 
 SELECT * FROM Stadium WHERE Stadium_ID = (SELECT Stadium_ID FROM Team WHERE Team_ID = 1);
 SELECT Stadium_ID FROM Team WHERE Team_ID = 1
+
+
+-- SELECT * FROM Coach WHERE Motivator IS NULL;
+
+
