@@ -35,7 +35,7 @@ Players Screen
 
 Coaches Screen
 - Query to display all coaches with their respective teams
-- Query to sort coaCHES by "Motivator" attribute
+- Query to sort coaches by "Motivator" attribute
 
 
 ## SQL Query Tracker
