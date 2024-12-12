@@ -53,7 +53,7 @@ Coaches Screen
 
 ## Python Query Tracker
 - 2 Read Only Queries (accepts user input)  
-    - Level 2 Query -> select_team_data() function
+    - Level 2 Query -> select_team_data() function has a basic SELECT and Subquery
 
 - 2 Modification Queries (accepts user input)  
     - Level 2 Query ->

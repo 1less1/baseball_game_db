@@ -60,6 +60,8 @@ def team_query_screen(db, navigator, query_num):
     while True:
         print_header("Explore Teams", "small")
 
+        display_all_teams(db)
+
         team_ids = select_team_ids(db)
 
         if query_num == '1':
@@ -73,7 +75,9 @@ def team_query_screen(db, navigator, query_num):
                 invalid_choice()
         
         elif query_num == '2':
-            None
+            title = "Teams Sorted By Overall Descending"
+            navigator.show_screennavigator.show_screen(query_result_screen, db, navigator, title, lambda: sort_team_overall(db))
+
         elif query_num == '3':
             None
 

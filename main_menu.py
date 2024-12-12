@@ -18,7 +18,7 @@ def start_game(navigator):
     clear_screen()
     print("Welcome to Fantasy Baseball!")
     print_fantasy_baseball_art("large")
-    print("This game was created by Dom Olhava and incorporates a mysql database to fetch team and player data.")
+    print("This game was created by Dom Olhava and incorporates a mysql database to store team and player data.")
     time.sleep(2)
 
     while True:
