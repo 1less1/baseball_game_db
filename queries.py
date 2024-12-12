@@ -413,5 +413,33 @@ def select_specific_player_info(db, player_id):
 
     cursor.close()
 
+def group_players_by_country(db):
+    cursor = db.cursor()
+
+    query = "SELECT Country_ID, COUNT(*) as Players FROM Player GROUP BY Country_ID ORDER BY COUNT(*) DESC;"
+    cursor.execute(query)
+    records = cursor.fetchall()
+
+    # Column Widths
+    country_id_width = 15
+    player_count_width = 15
+
+    # Print header
+    print(f"{'Country ID':<{country_id_width}} {'Players':<{player_count_width}}")
+    print('-' * (country_id_width + player_count_width))
+    
+    if records:
+        for record in records:
+            country_id = str(record[0]).ljust(country_id_width)
+            players = str(record[1]).ljust(player_count_width)
+
+            print(f"{country_id} {players}")
+        print()
+
+    else:
+        print("No country data found!")
+
+    cursor.close()
+
 
 

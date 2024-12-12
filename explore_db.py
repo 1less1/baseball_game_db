@@ -29,9 +29,15 @@ def explore_db_start_screen(db, navigator):
         elif choice == '3':
             #navigator.show_screen(coach_screen, db, navigator)
             print("Coming soon!")
+            time.sleep(1)
+            clear_screen()
+            # Temporary
         elif choice == '4':
             #navigator.show_screen(stadium_screen, db, navigator)
             print("Coming soon!")
+            time.sleep(1)
+            clear_screen()
+            # Temporary
         elif choice == '0':
             navigator.go_back(1)
             break
@@ -118,11 +124,11 @@ def player_screen(db, navigator):
         print_player_art()
 
         title = "What do you want explore?"
-        options = ["Team Rosters", "Player Search"]
+        options = ["Team Rosters", "Player Search", "Player Filter"]
         print_options(title, options, True)
 
         choice = input("Please choose an option above: ").strip()
-        choices = ['1', '2']
+        choices = ['1', '2', '3']
 
         if choice in choices:
             navigator.show_screen(player_query_screen, db, navigator, choice)
@@ -158,6 +164,11 @@ def player_query_screen(db, navigator, query_num):
             header = "Player Search"
             player_name = input("Enter a player's first name: ").strip()
             navigator.show_screen(player_search_screen, db, navigator, header, lambda: search_player_first_name(db, player_name))
+
+        elif query_num == '3':
+            print_player_art()
+            header = "Player Filters"
+            navigator.show_screen(player_filter_screen, db, navigator, header, lambda: print_player_art())
 
             
 
@@ -245,7 +256,25 @@ def player_search_screen(db, navigator, header, query):
         else:
             invalid_choice()
 
+def player_filter_screen(db, navigator, header, function):
+    while True:
+        print_header(header, "small")
 
+        function()
+
+        options = ["Group Players by Country"]
+        print_options("", options, True)
+
+        choice = input("Please choose an option above: ").strip()
+
+        if choice == '1':
+            title = "Players Grouped by Country"
+            navigator.show_screen(query_result_screen, db, navigator, title, lambda: group_players_by_country(db),3)
+        elif choice == '0':
+            navigator.go_back(2)
+            break
+        else:
+            invalid_choice()
 
 
 # Universal Screen (UI) ----------------------------------------------------------------------------------------------------
