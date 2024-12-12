@@ -1,8 +1,8 @@
 import mysql.connector as mysql
 from navigator import Navigator
-from screens import start_game
+from main_menu import start_game
 
-# Main program that starts the game!
+# Run this main program to start the Game!
 
 def main():
     # navigator object instantiated for managing screens (screen_stack) during program execution
