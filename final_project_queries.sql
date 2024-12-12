@@ -14,12 +14,17 @@ SELECT * FROM Stadium WHERE Stadium_ID = (SELECT Stadium_ID FROM Team WHERE Team
 
 -- 1. One query must be a basic SELECT/FROM/WHERE query
 -- This query will fetch all attributes for the entity identified by the primary key -> Team_ID = 1
-SELECT * FROM Team WHERE Team_ID = 1;
--- Sample Output: 
+SELECT * FROM Team WHERE Team_ID = 1; -- I can replace the Team_ID = 1 with %s to allow user input in my python program!
+-- Sample Output:
+-- Team_ID   Name      Home_Town    League   Salary_Cap    Stadium_ID
+-- 1         Crushers  Canyon City  AL       7500000.00    2
+
 
 -- 2. One query must answer a question that needs to join 2 or more tables
 -- Question: What players had over a .300 season batting average and 50 or more RBIs? What are their First and Last names and individual stats?
--- This query will 
+-- Player entities and their related Game_Stats will be chosen if they meet the WHERE criteria detailed above.
+-- This query will return a table of First_Name and Last_Name from the player table.
+-- It will also return the Game_Stats that correspond with each player record. 
 SELECT 
     p.First_Name AS First, 
     p.Last_Name AS Last,
@@ -31,37 +36,47 @@ JOIN
 ON 
     p.Player_ID = gs.Player_ID
 WHERE 
-    (gs.Hits / gs.At_Bats > 0.300) AND gs.RBIs >= 50;
-    
--- 3. One query must have a subquery
-SELECT * FROM Stadium WHERE Stadium_ID = (SELECT Stadium_ID FROM Team WHERE Team_ID = 1);
+    (gs.Hits / gs.At_Bats > 0.300) AND gs.RBIs >= 50; -- I can replace these numbers with %s to allow user input in my python program!
+-- Sample Output:
+-- First   Last   Player_ID   Season_ID   Games_Played   At_Bats   Hits   RBI's   Runs   Innings_Pitched   Earned_Runs   Strikeouts
+-- Casey   Folk   46          1           38             151       58     50      23     0                 0             0
 
--- Team Overall
+
+-- 3. One query must have a subquery
+-- This queries the Team table to return Team_ID, Team_Name, and Wins and Losses.
+-- Wins and Losses are found by using subqueries on the Team table to COUNT(*) all the times a certain Team_ID apperars in the Winner and Loser columns.
+-- Final results will be ordered by the returned Team_IDs
 SELECT 
     t.Team_ID, 
-    t.Name, 
-    ROUND(
-        (AVG(CASE 
-                WHEN p.Position_ID = 1 THEN 
-                    (r.K_Per_Nine + r.BB_Per_Nine + r.HR_Per_Nine) / 3  -- Pitcher average
-                WHEN p.Position_ID BETWEEN 2 AND 8 THEN 
-                    (r.Contact + r.Power + r.Eye) / 3  -- Hitter average
-                ELSE 0
-             END)
-        )
-    ) AS Team_Overall
+    t.name AS Team_Name, 
+    (	SELECT COUNT(*) 
+        FROM game 
+        WHERE Winner = t.Team_ID 
+        AND Season_ID = 1) AS Wins, 
+    (	SELECT COUNT(*) 
+        FROM game 
+        WHERE Loser = t.Team_ID 
+        AND Season_ID = 1) AS Losses
 FROM 
-    Team t
-JOIN 
-    Player p ON t.Team_ID = p.Team_ID
-JOIN 
-    Ratings r ON p.Player_ID = r.Player_ID
--- WHERE 
-    -- t.Team_ID = 17
-GROUP BY 
-    t.Team_ID, t.Name
-ORDER BY
-	Team_Overall DESC;
+    team t
+ORDER BY 
+    t.Team_ID;
+-- Sample Output:
+-- Team_ID   Team_Name   Wins   Losses
+-- 1         Crushers    18     20
+-- 2         Phoenix     22     16
+
+-- 4. One query must have an aggregate function and GROUP BY clause
 
 
+
+-- --------------------------------------------------------------------------------------
+-- Level 2 Queries 
+-- --------------------------------------------------------------------------------------
+
+
+
+-- --------------------------------------------------------------------------------------
+-- Other Queries 
+-- --------------------------------------------------------------------------------------
 

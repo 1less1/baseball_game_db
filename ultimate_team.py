@@ -2,6 +2,7 @@
 import mysql.connector as mysql
 import platform
 import os
+import sys
 import getpass
 import time
 from utils import *

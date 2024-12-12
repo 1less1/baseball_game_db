@@ -2,6 +2,7 @@
 import mysql.connector as mysql
 import platform
 import os
+import sys
 import getpass
 import time
 from utils import *
@@ -12,7 +13,7 @@ from create_db import create_db
 from ultimate_team import *
 from explore_db import *
 
-# Screens (UI) --------------------------------------------------
+# Screens (UI) ----------------------------------------------------------------------------------------------------
 
 def start_game(navigator):
     clear_screen()
@@ -24,6 +25,7 @@ def start_game(navigator):
     while True:
         password = getpass.getpass("Enter your localhost database password to start the game: ")
         
+        # Create DB Connection
         try:
             db = mysql.connect(
                 host="localhost",
@@ -52,7 +54,7 @@ def config_screen(db, navigator):
         
         print_options(title, options, False) # From utils.py
 
-        choice = input("Please choose an option above: ")
+        choice = input("Please choose an option above: ").strip()
         if choice == '1':
             create_db(db)
             
@@ -68,16 +70,20 @@ def main_menu(db, navigator):
         print_header("Main Menu", "small")
 
         title = "Game Modes"
-        options = ["Ultimate Team", "Explore Database"]
+        options = ["Ultimate Team", "Explore Database", "Exit"]
         print_options(title, options, False)
 
-        choice = input("Please choose an option above: ")
+        choice = input("Please choose an option above: ").strip()
         if choice == '1':
             navigator.show_screen(ut_start_screen, db, navigator)
             break
         elif choice == '2':
             navigator.show_screen(explore_db_start_screen, db, navigator)
             break
+        elif choice == '3':
+            db.close()
+            print("Database connection closed.")
+            sys.exit()
         else:
             invalid_choice()
     
