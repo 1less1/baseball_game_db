@@ -23,6 +23,28 @@ baseball_art_small = r"""
 
 """
 
+baseball_player_art = r"""
+
+                                        _--_     dMb
+                                    __(._  )   d0P
+                                        <  (D)  .MP
+                                    .~ \ /~```M-.
+                                    .~    V    Mo_ \
+
+    -------============((((}{)      (   (___. {:)-./
+                                    ~._____.(:}
+                                    /     .M\
+                                    /      "" \
+                                    |    /\   |
+                                    /   /  \   \
+                                    /   /    \   \
+                                    \__/      \__/
+                                    / /        | |
+                                .^V^.      .^V^.
+                                    +-+        +-+
+
+"""
+
 # Utilities --------------------------------------------------
 
 def clear_screen():
@@ -43,6 +65,9 @@ def print_fantasy_baseball_art(size):
         print(baseball_art_large)
     elif size.lower() == "small":
         print(baseball_art_small)
+
+def print_player_art():
+    print(baseball_player_art)
 
 def print_header(title, size):
     print('Use "Ctrl + C" to quit\n')
