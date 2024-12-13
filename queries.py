@@ -317,7 +317,7 @@ def select_specific_player_game_stats(db, player_id, season_id):
 
     # Print header
     print(f"{'Player ID':<{player_id_width}} {'First':<{first_name_width}} {'Last':<{last_name_width}} {'Season ID':<{season_id_width}} {'Games Played':<{games_played_width}} {'At Bats':<{at_bats_width}} {'Hits':<{hits_width}} {'RBIs':<{rbis_width}} {'Runs':<{runs_width}} {'Innings Pitched':<{innings_pitched_width}} {'Earned Runs':<{earned_runs_width}} {'Strikeouts':<{strikeouts_width}}")
-    print('-' * (player_id_width + first_name_width + last_name_width + season_id_width + games_played_width + at_bats_width + hits_width + rbis_width + runs_width + innings_pitched_width + earned_runs_width + strikeouts_width + 14))
+    print('-' * (player_id_width + first_name_width + last_name_width + season_id_width + games_played_width + at_bats_width + hits_width + rbis_width + runs_width + innings_pitched_width + earned_runs_width + strikeouts_width + 10))
 
     # Loop through records and print each row
     for record in records:

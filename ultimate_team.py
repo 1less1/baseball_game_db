@@ -22,7 +22,7 @@ def ut_start_screen(db, navigator):
         display_all_teams(db)
     
         title = "Do you want to create a team or manage an existing one?"
-        options = ["Create a Team", "Manage an Existing Team"]
+        options = ["New Game", "Load Game"]
         print_options(title, options, True)
 
         choice = input("Please choose an option above: ")

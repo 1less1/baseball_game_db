@@ -1,11 +1,7 @@
 # baseball_game_db
-Final project for CS 3140. Tasked with creating a medium sized relational database with a python frontend to query and edit the db. Wanted to turn this project into foundation for a future game where the user is tasked with managing a professional baseball team in my fantasy league of 20 teams!
+Final project for CS 3140. Tasked with creating a medium sized relational database with a python frontend to query and edit the db. Wanted to turn this project into **foundation** for a future game where the user is tasked with managing a professional baseball team in my fantasy league of 20 teams!
 
 Clone the REPO with: https://github.com/1less1/baseball_game_db.git  
-
-
-## Where did I get my data?
-- **CoPilot** used to create randomized data for the DB within carefully chosen requriements!  
 
 ## Order to Insert Base Data
 1. **Countries**
@@ -22,13 +18,14 @@ Clone the REPO with: https://github.com/1less1/baseball_game_db.git
 **Bold** indicates I have working insert data sql script!
 
 ## Game Instructions
-1. Import the Database within you locally hosted MySQL database through something like Workbench
-2. Make sure your MYSQL(Version#) is RUNNING -> This is crucial to be able to connect through python!
-3. Go to a terminal to start the game:
+1. Import the DB using the file: **baseball_game_db_dump.sql**
+2. Run the script within your locally hosted MySQL database through something like Workbench.
+3. Make sure your MYSQL Service is **RUNNING** -> This is crucial to be able to connect through python!
+4. Go to a terminal and switch to **Full Screen** to start the game:
 ```powershell
 python main.py
 ```
-4. Enjoy!
+5. Enjoy!
 
 ## Final Project SQL Script Mappings
 
@@ -103,10 +100,26 @@ DELETE FROM Team WHERE Team_ID = 1; -- Replaced 1 with %s to accept user input
 - This query can be found working using this path from the Main Menu -> Team Management -> Delete a Team
 - Python code located in queries.py under function name: **delete_specific_team(db, team_id)**   
 
+## Where did the data come from?
+- **CoPilot** used to create randomized data for the DB within carefully chosen requriements!  
 
 ## Expected Grade
-- I am a GOAT
+- I believe that I deserve an A for this assignment since I am at a Level 2 for Database Schema, Queries, and the Python Front End.
+- There are 8 tables with 20 or more records with highlights including:
+    - 20 base Team entities
+    - 50 base Stadium entities (20 are assigned to a specific team)
+    - 380 Game entities storing Home and Away Teams as well as their scores
+    - 240 total Player Entities (12 assigned per team - 30 Free Agents) with corresponding Ratings and Game_Stats per Player 
+    - 30 total Coach entities (20 assigned to a specific team - 10 Free Agents)
+    - 100 available countries to choose from in Countries table
+- The Python Front End has a lot of functionalites highlighted by:
+    - Create a Player
+    - Create a Team
+    - Database Exploration -> Most proud of Player Search!
+
 
 ## Challenges
-- This took way too long for no reason lol!!!
+- It was super hard to generate data that made sense for my baseball league and was randomized enough to be believable. I primarily used AI to generate the data and this came with a lot of **pros**. I was able to tell it exactly what I want generated to a tee and repeated data generation was simple and efficient. However, there were a lot of **drawbacks**. **ChatGPT** ended up using very obvious patterns when generating data within my requirements. For example, I tasked it to generate Player entities to populate my player table. I wanted it to generate an insert statement for 12 Players per Team. It did well for the first 5 teams but ended up assigning countries in a very predictable way causing my DB to have the same 12 countries represented for almost every team. I had to go back and give extra criteria for it to generate more randomized data but it still was being way too predictable. I then switched to **CoPilot** and it did a much better job generating randomized data. I was really happy with its output.
+- Another challenge was creating the proper Table relationships so my DB made sense. It got very dicey when trying to figure out how I can relate Team entities to specific Game and Season entities, while also having Game tied to Game_Stats which is related to individual Player entities. This took a long time to develop but in the end I am very happy with it! 
+
 

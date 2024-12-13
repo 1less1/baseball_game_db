@@ -332,8 +332,7 @@ def new_ratings_added_screen(db, navigator, new_player_id):
             navigator.go_back(9)
         else:
             invalid_choice()
-            
-
+        
 
 
 
