@@ -61,12 +61,12 @@ def config_screen(db, navigator):
         
         if choice == '1':
             create_db(db)
-            navigator.show_screen(main_menu, db, navigator)
-        elif choice == '2':
-            navigator.show_screen(main_menu, db, navigator)
-        else:
+        elif choice != '2':
             invalid_choice()
+            continue  # Skip the rest of the code and prompt for another choice
 
+        navigator.show_screen(main_menu, db, navigator)
+        break 
 
 def main_menu(db, navigator):
     while True:

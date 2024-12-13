@@ -226,7 +226,7 @@ def add_player_to_db_screen(db, navigator, player_attributes):
 
 
         options = ["Yes", "Go Back One Page", "Go Back to Create a Player"]
-        print_options("Would you like to add your player to the DB?", options, False)
+        print_options("Would you like to add the Player to the DB?", options, False)
 
         choice = input("Please choose an option above: ").strip()
         if choice == '1':

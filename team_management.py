@@ -33,34 +33,40 @@ def team_management_start_screen(db, navigator):
             break
         else:
             invalid_choice()
+        
+        
 
 
 # Create a Team ----------------------------------------------------------------------------------------------------
 def get_valid_team_attribute(prompt, type, stadium_ids):
     while True:
-        try:
-            attribute = input(prompt)
-            if type == "string":
-                return str(attribute)
-            elif type == "league" and (attribute.upper() == "AL" or attribute.upper() == "NL"):
-                return str(attribute).upper()
-            elif type == "salary":
+        attribute = input(prompt).strip()
+        if type == "string":
+            return attribute
+        elif type == "league":
+            if attribute.upper() in ["AL", "NL"]:
+                return attribute.upper()
+            else:
+                print("Please enter 'AL' or 'NL'.")
+        elif type == "salary":
+            try:
                 salary = float(attribute)
                 if 0 <= salary <= 9999999.99:
                     return salary
                 else:
                     print("Salary must be between 0 and 9,999,999.99")
-            elif type == "stadium":
-                if attribute.upper() == "NULL":
-                    return "NULL"
-                elif stadium_ids != None and attribute in stadium_ids:
-                    return int(attribute)
-                else:
-                    print("Please enter a valid Stadium ID or 'NULL'.")
+            except ValueError:
+                print("Invalid input. Please enter a valid Salary Cap.")
+        elif type == "stadium":
+            if attribute.upper() == "NULL":
+                return "NULL"
+            elif stadium_ids and attribute in stadium_ids:
+                return int(attribute)
             else:
-                print("Please enter a valid input!")
-        except ValueError:
-            print("Invalid input.")
+                print("Please enter a valid Stadium ID or 'NULL'.")
+        else:
+            print("Invalid input. Please try again.")
+
 
 def create_a_team_screen(db, navigator):
     while True:
@@ -110,7 +116,7 @@ def new_team_added_screen(db, navigator, new_team_id):
 
         choice = input("Press enter to Team Management: ").strip()
         if choice == "":
-            navigator.go_back(3)
+            navigator.go_back(2)
         else:
             invalid_choice()
 

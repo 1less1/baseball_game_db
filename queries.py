@@ -31,11 +31,12 @@ def select_team_ids(db):
 
 def select_team_names(db):
     cursor = db.cursor()
-    query = "SELECT Name FROM Team ORDER BY Team_ID ASC;"
+    query = "SELECT Team_ID, Name FROM Team ORDER BY Team_ID ASC;"
     cursor.execute(query)
     records = cursor.fetchall()
     cursor.close()  # Always close the cursor
-    return [str(record[0]) for record in records]  # Extract the first element from each tuple to return list of strings
+    return [(record[0], record[1]) for record in records]  # Return a list of tuples (Team_ID, Name)
+
 
 
 # Team Queries ----------------------------------------------------------------------------------------------------
@@ -413,6 +414,7 @@ def select_specific_player_info(db, player_id):
 
     cursor.close()
 
+# Count the amount of players per country and displaye the counts GROUPED By Country_ID
 def group_players_by_country(db):
     cursor = db.cursor()
 
@@ -443,9 +445,8 @@ def group_players_by_country(db):
 
 
 
-
-
 # Create a Player Queries ----------------------------------------------------------------------------------------------------
+# Selects all Position_IDs and returns a list of them
 def select_all_positions(db):
     cursor = db.cursor()
 
@@ -475,7 +476,7 @@ def select_all_positions(db):
     cursor.close()
     return [str(record[0]) for record in records] # Returns list of all valid Position IDS
 
-
+# Selects everything from Countries table and returns a list of ALL Country_IDs
 def select_all_countries(db):
     cursor = db.cursor()
 
@@ -505,6 +506,7 @@ def select_all_countries(db):
     cursor.close()
     return [str(record[0]) for record in records] # Returns list of all valid Country IDs
 
+# Inserts a new Player record into the DB based on user input
 def insert_new_player(db, player_attributes):
     # player_attributes is an array of user inputs to populate the SQL insert query
     first_name = str(player_attributes[0])
@@ -540,6 +542,7 @@ def insert_new_player(db, player_attributes):
     finally:
         cursor.close()
 
+# Inserts a new record for Ratings that is tied to a specific player based on user input
 def insert_player_ratings(db, player_ratings):
     # player_ratings is an array of user inputs to populate the SQL insert query
     player_id = int(player_ratings[0])
@@ -570,6 +573,7 @@ def insert_player_ratings(db, player_ratings):
     finally:
         cursor.close()
 
+# Deletes a Player record from the DB based on specfied player_id
 def delete_player(db, player_id):
     
     query = "DELETE FROM Player WHERE Player_ID = %s"
@@ -586,7 +590,7 @@ def delete_player(db, player_id):
     finally:
         cursor.close()
 
-
+# Selects all records from Stadium and returns a list of "AVAILABLE" or "ALL" Stadium_IDs
 def select_stadiums(db, type):
     cursor = db.cursor()
     
@@ -626,6 +630,7 @@ def select_stadiums(db, type):
     cursor.close()
     return [str(record[0]) for record in records]  # Returns list of all valid Stadium IDs
 
+# Inserts a new Team record into the DB based on user input
 def insert_new_team(db, team_attributes):  # team_attributes is an array of attributes that will populate the query
     # Extract values from the input list (team_attributes)
     name = str(team_attributes[0])
@@ -660,6 +665,7 @@ def insert_new_team(db, team_attributes):  # team_attributes is an array of attr
     finally:
         cursor.close()
 
+# Deletes a specific Team record based on specified Team_ID
 def delete_specific_team(db, team_id):
 
     query ="DELETE FROM Team WHERE Team_ID = %s"
@@ -676,6 +682,7 @@ def delete_specific_team(db, team_id):
     finally:
         cursor.close()
 
+# Updates a specific Team record by updating a Team's current Team_ID to a new one based on user input
 def update_specific_team(db, team_id, new_team_id):
     try:
         cursor = db.cursor()

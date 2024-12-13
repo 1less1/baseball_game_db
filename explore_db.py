@@ -75,6 +75,7 @@ def team_query_screen(db, navigator, query_num):
 
         team_ids = select_team_ids(db)
         team_names = select_team_names(db)
+        team_names_dict = dict(team_names)
 
         if query_num == '1':
             header = "View Specific Team Data"
@@ -113,7 +114,8 @@ def team_query_screen(db, navigator, query_num):
             if season_id not in season_ids or team_id not in team_ids:
                 invalid_choice()
             else:
-                header = f"Team {team_id}: {team_names[int(team_id)-1]} Game History"
+                team_name = team_names_dict[int(team_id)]
+                header = f"Team {team_id}: {team_name} Game History"
                 navigator.show_screen(query_result_screen, db, navigator, header, lambda: select_team_games(db, team_id, season_id), 2)
 
 # Player Screens (UI) ----------------------------------------------------------------------------------------------------
@@ -144,6 +146,7 @@ def player_query_screen(db, navigator, query_num):
 
         team_ids = select_team_ids(db)
         team_names = select_team_names(db)
+        team_names_dict = dict(team_names)
 
         if query_num == '1':
             display_all_teams(db)
@@ -152,8 +155,8 @@ def player_query_screen(db, navigator, query_num):
             team_id = input("Please input a valid team number: ").strip()
 
             if team_id in team_ids:
-                team_name = team_names[int(team_id)-1]
-                header = f"Team {team_id}: {team_name} Roster "
+                team_name = team_names_dict[int(team_id)]
+                header = f"Team {team_id}: {team_name} Roster"
                 navigator.show_screen(player_roster_screen, db, navigator, header, team_id, lambda: select_team_roster(db, team_id))
             else:
                 invalid_choice()
