@@ -18,11 +18,9 @@ def ut_start_screen(db, navigator):
     while True:
         print_header("Create a Team", "small")
 
-        print("Current baseball teams in the league: ")
-        print ("-" * 40)
+        print_small_header("Current baseball teams in the league: ")
         display_all_teams(db)
-        print()
-        
+    
         title = "Do you want to create a team or manage an existing one?"
         options = ["Create a Team", "Manage an Existing Team"]
         print_options(title, options, True)
@@ -30,12 +28,12 @@ def ut_start_screen(db, navigator):
         choice = input("Please choose an option above: ")
         if choice == '1':
             # Temporary!!!
-            print("Chose Create a Team")
+            print("Coming SOON!")
             time.sleep(1)
             clear_screen()
         elif choice == '2':
              # Temporary!!!
-            print("Chose Manage a Team")
+            print("Coming SOON!")
             time.sleep(1)
             clear_screen()
         elif choice == '0':

@@ -587,3 +587,88 @@ def delete_player(db, player_id):
         cursor.close()
 
 
+def select_unassigned_stadiums(db):
+    cursor = db.cursor()
+
+    query = "SELECT * FROM Stadium WHERE Stadium_ID NOT IN (SELECT Stadium_ID FROM Team WHERE Stadium_ID IS NOT NULL);"
+
+    cursor.execute(query)
+    records = cursor.fetchall()
+
+    # Column Widths
+    stadium_id_width = 15
+    name_width = 25
+    field_size_width = 15
+    ticket_cost_width = 15
+    max_capacity_width = 15
+
+    # Print header
+    print(f"{'Stadium ID':<{stadium_id_width}} {'Name':<{name_width}} {'Field Size':<{field_size_width}} {'Ticket Cost':<{ticket_cost_width}} {'Max Capacity':<{max_capacity_width}}")
+    print('-' * (stadium_id_width + name_width + field_size_width + ticket_cost_width + max_capacity_width))
+
+    if records:
+        for record in records:
+            stadium_id = str(record[0]).ljust(stadium_id_width)
+            name = str(record[1]).ljust(name_width)
+            field_size = str(record[2]).ljust(field_size_width)
+            ticket_cost = f"{record[3]:.2f}".ljust(ticket_cost_width)  # Ensuring 2 decimal places for ticket cost
+            max_capacity = str(record[4]).ljust(max_capacity_width)
+
+            print(f"{stadium_id} {name} {field_size} {ticket_cost} {max_capacity}")
+        print()
+
+    else:
+        print("No stadium data found!")
+
+    cursor.close()
+    return [str(record[0]) for record in records]  # Returns list of all valid Stadium IDs
+
+def insert_new_team(db, team_attributes):  # team_attributes is an array of attributes that will populate the query
+    # Extract values from the input list (team_attributes)
+    name = str(team_attributes[0])
+    home_town = str(team_attributes[1])
+    league = str(team_attributes[2])
+    salary_cap = float(team_attributes[3])
+    
+    # Handling the Stadium_ID (None if "NULL" is provided, otherwise an integer)
+    if team_attributes[4] == "NULL":
+        stadium_id = None
+    else:
+        stadium_id = int(team_attributes[4])
+
+    query = """
+    INSERT INTO team (Name, Home_Town, League, Salary_Cap, Stadium_ID) 
+    VALUES (%s, %s, %s, %s, %s);
+    """
+
+    try:
+        cursor = db.cursor()
+        cursor.execute(query, (name, home_town, league, salary_cap, stadium_id))
+        db.commit()
+
+        # Get the Team_ID of the newly inserted team
+        team_id = cursor.lastrowid
+        print(f"Team successfully added with Team_ID: {team_id}")
+        return team_id
+    except Exception as e:
+        db.rollback()  # Roll back in case of an error
+        print(f"An error occurred: {e}")
+        return None
+    finally:
+        cursor.close()
+
+def delete_specific_team(db, team_id):
+
+    query ="DELETE FROM Team WHERE Team_ID = %s"
+
+    try:
+        cursor = db.cursor()
+        cursor.execute(query, (team_id,))
+        db.commit()
+
+        print(f"Record successfully deleted for Team_ID: {team_id}")
+    except Exception as e:
+        db.rollback()  # Rollback in case of an error
+        print(f"An error occurred: {e}")
+    finally:
+        cursor.close()

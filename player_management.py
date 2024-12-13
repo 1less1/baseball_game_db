@@ -14,12 +14,12 @@ from queries import *
 
 # Screens (UI) ----------------------------------------------------------------------------------------------------
 
-def create_a_player_start_screen(db, navigator):
+def player_management_start_screen(db, navigator):
     while True:
-        print_header("Create a Player", "small")
+        print_header("Player Management", "small")
     
         options = ["Create a Player", "Delete a Player"]
-        print_options("Welcome to create a player!", options, True)
+        print_options("Welcome to Player Management!", options, True)
 
         choice = input("Please choose an option above: ").strip()
         if choice == '1':
@@ -158,11 +158,17 @@ def choose_player_age_screen(db, navigator, player_attributes):
         print_small_header("Enter the new player's AGE")
 
         while True:
-            age = int(input("Enter an age of 99 or less: ").strip())
-            if age <= 99 and age > 0:
-                break
-            else:
-                print("Error: Invalid age. The player can be from 1 to 99 years old!")
+            age = input("Enter an age of 99 or less: ").strip()
+
+            # Attempt to convert the input to an integer
+            try:
+                age = int(age)
+                if age <= 99 and age > 0:
+                    break  # Exit the loop if the age is valid
+                else:
+                    print("Error: Invalid age. The player can be from 1 to 99 years old!")
+            except ValueError:
+                print("Error: Invalid age. Enter an integer.")
 
         options = ["Yes"]
         print_options("Would you like to continue?", options, True)
@@ -295,19 +301,22 @@ def choose_player_ratings_screen(db, navigator, new_player_id):
         player_ratings = collect_player_ratings(new_player_id)
 
 
+        while True:
+            options = ["Yes", "Restart"]
+            print_options("Would you like to add the player ratings to the DB?", options, False)
 
-        options = ["Yes", "Restart", "Go Back to Create a Player"]
-        print_options("Would you like to add the player ratings to the DB?", options, False)
-
-        choice = input("Please choose an option above: ").strip()
-        if choice == '1':
-            new_player_id=insert_player_ratings(db, player_ratings)
-            time.sleep(2)
-            navigator.show_screen(new_ratings_added_screen, db, navigator, new_player_id)
-        elif choice == '2':
-            print("Resetting...")
-            time.sleep(2)
-            clear_screen()
+            choice = input("Please choose an option above: ").strip()
+            if choice == '1':
+                new_player_id=insert_player_ratings(db, player_ratings)
+                time.sleep(2)
+                navigator.show_screen(new_ratings_added_screen, db, navigator, new_player_id)
+            elif choice == '2':
+                print("Resetting...")
+                time.sleep(2)
+                clear_screen()
+                break
+            else:
+                print("Invalid Choice. Try again.")
 
 
 def new_ratings_added_screen(db, navigator, new_player_id):
@@ -318,7 +327,7 @@ def new_ratings_added_screen(db, navigator, new_player_id):
 
         select_specific_player_ratings(db, new_player_id)
 
-        choice = input("Press enter to Go Back to Create a Player: ").strip()
+        choice = input("Press enter to Go Back to Player Management: ").strip()
         if choice == "":
             navigator.go_back(9)
         else:

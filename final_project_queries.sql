@@ -68,9 +68,19 @@ SELECT Country_ID, COUNT(*) as Players FROM Player GROUP BY Country_ID ORDER BY 
 -- --------------------------------------------------------------------------------------
 
 -- 1. One query must add a record to one or more tables.
--- Add new Player to Player Table
+-- This query adds a new entity into the Player table.
+-- After inserting, this record will be assigned an auto incrementing Player_ID as its primary key.
+INSERT INTO Player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) VALUES
+('DJ', 'Glitter Buns', 1, 5, 20, 'USA');
+-- Sample Output: In MySQL this query returns a "green check mark" and message of "1 row(s) affected"
+-- to give confirmation that the INSERT was a success!
+
 -- 2. One query must delete a record from one or more tables.
--- Delete a Player entitiy from Player Table
+-- This query will delete the Player record that is uniquely identified by the Player_ID specified
+DELETE FROM Player WHERE Player_ID = 1;
+-- Sample Output: In MySQL this query returns a "green check mark" and message of "1 row(s) affected"
+-- to give confirmation that the DELETE was a success!
+
 
 -- 3. You have foreign key ON UPDATE constraints that make sense on a table/tables and write an SQL query to demonstrate how one of them works.
 -- Update a Team's Team_ID -> Should Reflect in Player table by changing Team_ID to match
