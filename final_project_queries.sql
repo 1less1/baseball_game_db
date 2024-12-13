@@ -1,4 +1,5 @@
 USE baseball_game_db;
+-- Dominick Olhava
 
 -- --------------------------------------------------------------------------------------
 -- Level 1 Queries 
@@ -59,15 +60,28 @@ SELECT Country_ID, COUNT(*) as Players FROM Player GROUP BY Country_ID ORDER BY 
 -- USA          49
 -- JPN          34
 
+
+
+
 -- --------------------------------------------------------------------------------------
 -- Level 2 Queries 
 -- --------------------------------------------------------------------------------------
 
+-- 1. One query must add a record to one or more tables.
+-- Add new Player to Player Table
+-- 2. One query must delete a record from one or more tables.
+-- Delete a Player entitiy from Player Table
+
+-- 3. You have foreign key ON UPDATE constraints that make sense on a table/tables and write an SQL query to demonstrate how one of them works.
+-- Update a Team's Team_ID -> Should Reflect in Player table by changing Team_ID to match
+-- 4. You have foreign key ON DELETE constraints that make sense on a table/tables and write an SQL query to demonstrate how one of them works.
+-- Delete a team from the DB -> Should Reflect in Player table by setting Team_ID to NULL 
 
 
 -- --------------------------------------------------------------------------------------
 -- Other Queries 
 -- --------------------------------------------------------------------------------------
+
 SELECT Player_ID from Player WHERE Team_ID = 5;
 
 SELECT r.*, p.First_Name as First, p.Last_Name as Last FROM Ratings as r JOIN Player as p ON r.Player_ID = p.Player_ID WHERE r.Player_ID = 1;
@@ -76,4 +90,4 @@ SELECT gs.*, p.First_Name as First, p.Last_Name as Last FROM Game_Stats as gs JO
 
 SELECT ply.*, pos.Code as Position FROM Player as ply JOIN position as pos ON ply.Position_ID = pos.Position_ID WHERE ply.Player_ID = 1;
 
-SELECT * FROM Player WHERe 
+SELECT * FROM countries;

@@ -77,6 +77,11 @@ def print_header(title, size):
     print("-" * 80)
     print()
 
+def print_small_header(title):
+    print(title)
+    print("-" * 40)
+    print()
+
 def print_options(title, options, go_back):
     print(str(title))
     if options:

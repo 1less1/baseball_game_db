@@ -11,6 +11,7 @@ from navigator import Navigator
 # Document Specific Imports
 from create_db import create_db
 from ultimate_team import *
+from create_a_player import *
 from explore_db import *
 
 # Screens (UI) ----------------------------------------------------------------------------------------------------
@@ -70,7 +71,7 @@ def main_menu(db, navigator):
         print_header("Main Menu", "small")
 
         title = "Game Modes"
-        options = ["Ultimate Team", "Explore Database", "Exit"]
+        options = ["Ultimate Team", "Create a Player", "Explore Database", "Exit"]
         print_options(title, options, False)
 
         choice = input("Please choose an option above: ").strip()
@@ -78,9 +79,12 @@ def main_menu(db, navigator):
             navigator.show_screen(ut_start_screen, db, navigator)
             break
         elif choice == '2':
-            navigator.show_screen(explore_db_start_screen, db, navigator)
+            navigator.show_screen(create_a_player_start_screen, db, navigator)
             break
         elif choice == '3':
+            navigator.show_screen(explore_db_start_screen, db, navigator)
+            break
+        elif choice == '4':
             db.close()
             print("Database connection closed.")
             sys.exit()

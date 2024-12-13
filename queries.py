@@ -443,3 +443,64 @@ def group_players_by_country(db):
 
 
 
+
+
+# Create a Player Queries ----------------------------------------------------------------------------------------------------
+def select_all_positions(db):
+    cursor = db.cursor()
+
+    query = "SELECT * FROM Position"
+    cursor.execute(query)
+    records = cursor.fetchall()
+
+     # Column Widths
+    position_id_width = 15
+    position_name_width = 15
+
+    # Print header
+    print(f"{'Position ID':<{position_id_width}} {'Position':<{position_name_width}}")
+    print('-' * (position_id_width + position_name_width))
+
+    if records:
+        for record in records:
+            position_id = str(record[0]).ljust(position_id_width)
+            position_name = str(record[1]).ljust(position_name_width)
+
+            print(f"{position_id} {position_name}")
+        print()
+
+    else:
+        print("No position data found!")
+
+    cursor.close()
+    return [str(record[0]) for record in records] # Returns list of all valid Position IDS
+
+
+def select_all_countries(db):
+    cursor = db.cursor()
+
+    query = "SELECT * FROM Countries"
+    cursor.execute(query)
+    records = cursor.fetchall()
+
+    # Column Widths
+    country_id_width = 15
+    country_name_width = 15
+
+    # Print header
+    print(f"{'Country ID':<{country_id_width}} {'Country Name':<{country_name_width}}")
+    print('-' * (country_id_width + country_name_width))
+
+    if records:
+        for record in records:
+            country_id = str(record[0]).ljust(country_id_width)
+            country_name = str(record[1]).ljust(country_name_width)
+
+            print(f"{country_id} {country_name}")
+        print()
+
+    else:
+        print("No country data found!")
+
+    cursor.close()
+    return [str(record[0]) for record in records] # Returns list of all valid Country IDs

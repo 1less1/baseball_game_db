@@ -9,7 +9,7 @@ from utils import *
 from navigator import Navigator
 
 # Document Specific Imports
-from queries import display_all_teams
+from queries import *
 
 
 # Screens (UI) --------------------------------------------------
@@ -23,7 +23,7 @@ def ut_start_screen(db, navigator):
         display_all_teams(db)
         print()
         
-        title = "Do you want to create a team or manage an existing one? "
+        title = "Do you want to create a team or manage an existing one?"
         options = ["Create a Team", "Manage an Existing Team"]
         print_options(title, options, True)
 
