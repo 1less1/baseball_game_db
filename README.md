@@ -24,7 +24,7 @@ Clone the REPO with: https://github.com/1less1/baseball_game_db.git
 ## Game Instructions
 1. Import the Database within you locally hosted MySQL database through something like Workbench
 2. Make sure your MYSQL(Version#) is RUNNING -> This is crucial to be able to connect through python!
-3. Go to a terminal to start the game:
+3. Go to a terminal **FULL SCREEN** to start the game:
 ```powershell
 python main.py
 ```
