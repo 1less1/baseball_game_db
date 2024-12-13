@@ -150,9 +150,9 @@ def select_team_games(db, team_id, season_id):
         g.Loser
     FROM 
         game g
-    JOIN 
+    LEFT JOIN 
         team ht ON g.Home_Team = ht.Team_ID
-    JOIN 
+    LEFT JOIN 
         team at ON g.Away_Team = at.Team_ID
     WHERE 
         (g.Home_Team = %s OR g.Away_Team = %s) AND g.Season_ID = %s
@@ -160,7 +160,6 @@ def select_team_games(db, team_id, season_id):
         g.Date ASC;
     """
     
-    cursor = db.cursor()
     cursor.execute(query, (team_id, team_id, season_id))
     records = cursor.fetchall()
 
@@ -180,21 +179,22 @@ def select_team_games(db, team_id, season_id):
         for record in records:
             # Format each record
             game_id = str(record[0]).ljust(game_id_width)
-            # Convert date to string and format it
             date_formatted = record[2].strftime('%m-%d') if isinstance(record[2], datetime) else str(record[2])
-            date_str = date_formatted.ljust(date_width)  # Now it's a string, so ljust() will work
+            date_str = date_formatted.ljust(date_width)
             season_id = str(record[1]).ljust(season_id_width)
-            home_team = str(record[3]).ljust(team_name_width)
-            home_score = str(record[4]).ljust(score_width)
-            away_team = str(record[5]).ljust(team_name_width)
-            away_score = str(record[6]).ljust(score_width)
             
+            # Handle None values (NULL in DB)
+            home_team = str(record[3] if record[3] is not None else "NULL").ljust(team_name_width)
+            home_score = str(record[4]).ljust(score_width)
+            away_team = str(record[5] if record[5] is not None else "NULL").ljust(team_name_width)
+            away_score = str(record[6]).ljust(score_width)
+
             # Print formatted record
             print(f"{game_id} {date_str} {season_id} {home_team} {home_score} {away_team} {away_score}")
         print()
     else:
         print(f"Unable to find game history for Team {team_id}!")
-    
+
     cursor.close()
 
 # Player Queries ----------------------------------------------------------------------------------------------------
@@ -587,10 +587,13 @@ def delete_player(db, player_id):
         cursor.close()
 
 
-def select_unassigned_stadiums(db):
+def select_stadiums(db, type):
     cursor = db.cursor()
-
-    query = "SELECT * FROM Stadium WHERE Stadium_ID NOT IN (SELECT Stadium_ID FROM Team WHERE Stadium_ID IS NOT NULL);"
+    
+    if type == "available":
+        query = "SELECT * FROM Stadium WHERE Stadium_ID NOT IN (SELECT Stadium_ID FROM Team WHERE Stadium_ID IS NOT NULL);"
+    elif type == "all": 
+        query == "SELECT * FROM Stadium;"
 
     cursor.execute(query)
     records = cursor.fetchall()
@@ -666,9 +669,29 @@ def delete_specific_team(db, team_id):
         cursor.execute(query, (team_id,))
         db.commit()
 
-        print(f"Record successfully deleted for Team_ID: {team_id}")
+        print(f"Record successfully deleted for Team ID: {team_id}")
     except Exception as e:
         db.rollback()  # Rollback in case of an error
         print(f"An error occurred: {e}")
+    finally:
+        cursor.close()
+
+def update_specific_team(db, team_id, new_team_id):
+    try:
+        cursor = db.cursor()
+
+        query = "UPDATE Team SET Team_ID = %s WHERE Team_ID = %s;"
+        
+        cursor.execute(query, (new_team_id, team_id))
+        db.commit()
+
+        # Check if the update was successful
+        if cursor.rowcount > 0: # Cursor will return the amount of rows affected. If it is > 0 it worked!!!!
+            print(f"Team_ID updated successfully for Team {team_id} to {new_team_id}.")
+        else:
+            print(f"No team found with Team ID {team_id}, no update performed.")
+    except Exception as e:
+        print(f"Error: {e}")
+        db.rollback()
     finally:
         cursor.close()

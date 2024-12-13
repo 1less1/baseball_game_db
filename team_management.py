@@ -18,7 +18,7 @@ def team_management_start_screen(db, navigator):
     while True:
         print_header("Team Management", "small")
     
-        options = ["Create a Team", "Delete a Team"]
+        options = ["Create a Team", "Delete a Team", "Update a Team"]
         print_options("Welcome to Team Management!", options, True)
 
         choice = input("Please choose an option above: ").strip()
@@ -26,6 +26,8 @@ def team_management_start_screen(db, navigator):
             navigator.show_screen(create_a_team_screen, db, navigator)
         elif choice == '2':
             navigator.show_screen(delete_a_team_screen, db, navigator)
+        elif choice == '3':
+            navigator.show_screen(update_a_team_screen, db, navigator)
         elif choice == '0':
             navigator.go_back(1)
             break
@@ -73,7 +75,7 @@ def create_a_team_screen(db, navigator):
 
         print()
         print_small_header("Available Stadiums")
-        stadium_ids = select_unassigned_stadiums(db)
+        stadium_ids = select_stadiums(db, "available")
         stadium_id = get_valid_team_attribute("Enter Stadium ID: ", "stadium", stadium_ids)
 
         team_attributes = [name, home_town, league, salary_cap, stadium_id]
@@ -147,4 +149,49 @@ def delete_a_team_screen(db, navigator):
             break
         else:
             invalid_choice()
-    
+
+# Update a Team ----------------------------------------------------------------------------------------------------
+def update_a_team_screen(db, navigator):
+    while True:
+        print_header("Update a Team", "small")
+        
+        display_all_teams(db)
+        team_ids = select_team_ids(db)
+
+        while True:
+            team_id = input("Enter the desired Team Number to UPDATE: ").strip()
+            if team_id in team_ids:
+                break
+            else:
+                print("Error: Invalid TEAM ID. Please choose a Team Number above.")
+
+        while True:
+            new_team_id = input(f"What would you like to change Team {team_id}'s ID to? ")
+            if new_team_id not in team_ids:
+                    break
+            else:
+                print("Error: Invalid TEAM ID. Please choose a Team Number above.")
+        
+        options = ["Yes", "No"]
+        print_options(f"Would you like to update Team {team_id}'s ID to [{new_team_id}]?", options, True)
+
+        choice = input("Please choose an option above: ").strip()
+        if choice == '1':
+            update_specific_team(db, team_id, new_team_id)
+            time.sleep(3)
+            navigator.go_back(1)
+        elif choice == '2':
+            print("Resetting...")
+            time.sleep(2)
+            clear_screen()
+        elif choice == '0':
+            navigator.go_back(1)
+            break
+        else:
+            invalid_choice()
+
+        
+
+
+
+

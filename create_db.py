@@ -53,7 +53,7 @@ def create_db(db):
                     print(f"Error: {err}")
                     print(f"Statement: {statement}")
 
-    print("SQL scripts executed successfully!")
+    print("\nSQL scripts executed successfully!!!")
     db.commit()
     time.sleep(2)
 

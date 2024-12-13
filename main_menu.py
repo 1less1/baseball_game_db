@@ -58,14 +58,14 @@ def config_screen(db, navigator):
         print_options(title, options, False) # From utils.py
 
         choice = input("Please choose an option above: ").strip()
+        
         if choice == '1':
             create_db(db)
-            
-        elif choice != '2':
-            invalid_choice() # From utils.py
-
-        navigator.show_screen(main_menu, db, navigator)
-        break 
+            navigator.show_screen(main_menu, db, navigator)
+        elif choice == '2':
+            navigator.show_screen(main_menu, db, navigator)
+        else:
+            invalid_choice()
 
 
 def main_menu(db, navigator):
