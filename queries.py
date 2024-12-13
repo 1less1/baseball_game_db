@@ -504,3 +504,86 @@ def select_all_countries(db):
 
     cursor.close()
     return [str(record[0]) for record in records] # Returns list of all valid Country IDs
+
+def insert_new_player(db, player_attributes):
+    # player_attributes is an array of user inputs to populate the SQL insert query
+    first_name = str(player_attributes[0])
+    last_name = str(player_attributes[1])
+    position_id = int(player_attributes[2])
+
+    if player_attributes[3] == "NULL":
+        team_id = None
+    else:
+        team_id = int(player_attributes[3])
+
+    age = int(player_attributes[4])
+    country_id = str(player_attributes[5])
+
+    query = """
+    INSERT INTO player (First_Name, Last_Name, Position_ID, Team_ID, Age, Country_ID) 
+    VALUES (%s, %s, %s, %s, %s, %s);
+    """
+
+    try:
+        cursor = db.cursor()
+        cursor.execute(query, (first_name, last_name, position_id, team_id, age, country_id))
+        db.commit() 
+
+        # Get the Player_ID of the newly inserted player
+        player_id = cursor.lastrowid
+        print(f"Player successfully added with Player_ID: {player_id}")
+        return player_id
+    except Exception as e:
+        db.rollback()  # Roll back in case of an error
+        print(f"An error occurred: {e}")
+        return None
+    finally:
+        cursor.close()
+
+def insert_player_ratings(db, player_ratings):
+    # player_ratings is an array of user inputs to populate the SQL insert query
+    player_id = int(player_ratings[0])
+    contact = int(player_ratings[1])
+    power = int(player_ratings[2])
+    eye = int(player_ratings[3])
+    speed = int(player_ratings[4])
+    k_per_nine = int(player_ratings[5]) 
+    bb_per_nine = int(player_ratings[6])
+    hr_per_nine = int(player_ratings[7])
+
+    query = """
+    INSERT INTO ratings (Player_ID, Contact, Power, Eye, Speed, K_Per_Nine, BB_Per_Nine, HR_Per_Nine)
+    VALUES (%s, %s, %s, %s, %s, %s, %s, %s);
+    """
+
+    try:
+        cursor = db.cursor()
+        cursor.execute(query, (player_id, contact, power, eye, speed, k_per_nine, bb_per_nine, hr_per_nine))
+        db.commit()  # Commit the transaction
+
+        print(f"Ratings successfully added for Player_ID: {player_id}")
+        return player_id
+    except Exception as e:
+        db.rollback()  # Rollback in case of an error
+        print(f"An error occurred: {e}")
+        return None
+    finally:
+        cursor.close()
+
+def delete_player(db, player_id):
+    
+    query = "DELETE FROM Player WHERE Player_ID = %s"
+
+    try:
+        cursor = db.cursor()
+        cursor.execute(query, (player_id,))
+        db.commit()
+
+        print(f"Record successfully deleted for Player_ID: {player_id}")
+    except Exception as e:
+        db.rollback()  # Rollback in case of an error
+        print(f"An error occurred: {e}")
+    finally:
+        cursor.close()
+
+
