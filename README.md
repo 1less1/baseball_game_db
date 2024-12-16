@@ -27,6 +27,10 @@ python main.py
 ```
 5. Enjoy!
 
+## In Game Main Menu
+![Main Menu](/pictures/baseball_game_db_main_menu.png)
+
+
 ## Final Project SQL Script Mappings
 
 ### Level 1 Queries
