@@ -30,6 +30,31 @@ python main.py
 ## In Game Main Menu
 ![Main Menu](/pictures/baseball_game_db_main_menu.png)
 
+## Linux Notes
+List all currently running services
+```bash
+systemctl list-units --type=service --state=running
+```
+
+Check if mysql service is running
+```bash
+sudo systemctl status mysql
+```
+
+Start mysql service
+```bash
+sudo systemctl start mysql
+```
+
+Stop mysql service
+```bash
+sudo systemctl stop mysql
+```
+
+Disable mysql service from running on boot
+```bash
+sudo systemctl disable mysql
+```
 
 ## Final Project SQL Script Mappings
 
