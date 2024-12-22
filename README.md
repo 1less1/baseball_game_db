@@ -17,6 +17,12 @@ Clone the REPO with: https://github.com/1less1/baseball_game_db.git
 
 **Bold** indicates I have working insert data sql script!
 
+## Dependencies
+Must install mysql connector to communicate with the database
+```bash
+pip install mysql-connector-python
+```
+
 ## Game Instructions
 1. Import the DB using the file: **baseball_game_db_dump.sql**
 2. Run the script within your locally hosted MySQL database through something like Workbench.
