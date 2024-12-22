@@ -34,7 +34,8 @@ def start_game(navigator):
                 host="localhost",
                 user="root",
                 passwd=password,
-                database="baseball_game_db"
+                database="baseball_game_db",
+		        ssl_disabled=True
             )
             print("Connection successful!")
             time.sleep(1)

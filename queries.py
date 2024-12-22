@@ -7,7 +7,7 @@ from datetime import datetime
 
 def display_all_teams(db):
     cursor = db.cursor()
-    query = "SELECT * FROM Team"
+    query = "SELECT * FROM team"
     cursor.execute(query)
     records = cursor.fetchall()
 
@@ -23,7 +23,7 @@ def display_all_teams(db):
 
 def select_team_ids(db):
     cursor = db.cursor()
-    query = "SELECT Team_ID FROM Team"
+    query = "SELECT Team_ID FROM team"
     cursor.execute(query)
     records = cursor.fetchall()
     cursor.close()  # Always close the cursor
@@ -31,7 +31,7 @@ def select_team_ids(db):
 
 def select_team_names(db):
     cursor = db.cursor()
-    query = "SELECT Team_ID, Name FROM Team ORDER BY Team_ID ASC;"
+    query = "SELECT Team_ID, Name FROM team ORDER BY Team_ID ASC;"
     cursor.execute(query)
     records = cursor.fetchall()
     cursor.close()  # Always close the cursor
@@ -44,7 +44,7 @@ def select_team_names(db):
 def select_team_data(db, team_id):
     cursor = db.cursor()
 
-    query = "SELECT t.*, s.Name AS Stadium_Name FROM Team t JOIN Stadium s ON t.Stadium_ID = s.Stadium_ID WHERE t.Team_ID = %s;"
+    query = "SELECT t.*, s.Name AS Stadium_Name FROM team t JOIN stadium s ON t.Stadium_ID = s.Stadium_ID WHERE t.Team_ID = %s;"
     cursor.execute(query, (team_id,))
     record = cursor.fetchone()
     
@@ -66,7 +66,7 @@ def select_team_data(db, team_id):
 def sort_team_overall(db):
     cursor = db.cursor()
 
-    query = "SELECT t.Team_ID, t.Name, ROUND(AVG(CASE WHEN p.Position_ID = 1 THEN (r.K_Per_Nine + r.BB_Per_Nine + r.HR_Per_Nine) / 3 WHEN p.Position_ID BETWEEN 2 AND 8 THEN (r.Contact + r.Power + r.Eye) / 3 ELSE 0 END)) AS Team_Overall FROM Team t JOIN Player p ON t.Team_ID = p.Team_ID JOIN Ratings r ON p.Player_ID = r.Player_ID GROUP BY t.Team_ID, t.Name ORDER BY Team_Overall DESC;"
+    query = "SELECT t.Team_ID, t.Name, ROUND(AVG(CASE WHEN p.Position_ID = 1 THEN (r.K_Per_Nine + r.BB_Per_Nine + r.HR_Per_Nine) / 3 WHEN p.Position_ID BETWEEN 2 AND 8 THEN (r.Contact + r.Power + r.Eye) / 3 ELSE 0 END)) AS Team_Overall FROM team t JOIN player p ON t.Team_ID = p.Team_ID JOIN ratings r ON p.Player_ID = r.Player_ID GROUP BY t.Team_ID, t.Name ORDER BY Team_Overall DESC;"
     cursor.execute(query)
     records = cursor.fetchall()
 
@@ -83,7 +83,7 @@ def sort_team_overall(db):
 def select_all_seasons(db):
     cursor = db.cursor()
 
-    query = "SELECT * FROM Season"
+    query = "SELECT * FROM season"
     cursor.execute(query)
     records = cursor.fetchall()
 
@@ -203,7 +203,7 @@ def select_team_games(db, team_id, season_id):
 def select_team_roster(db, team_id):
     cursor = db.cursor()
 
-    query = "SELECT ply.*, pos.Code as Position FROM Player as ply JOIN position as pos ON ply.Position_ID = pos.Position_ID WHERE Team_ID =  %s;"
+    query = "SELECT ply.*, pos.Code as Position FROM player as ply JOIN position as pos ON ply.Position_ID = pos.Position_ID WHERE Team_ID =  %s;"
     cursor.execute(query, (team_id,))
     records = cursor.fetchall()
 
@@ -244,7 +244,7 @@ def select_team_roster(db, team_id):
 
 def select_team_player_ids(db, team_id):
     cursor = db.cursor()
-    query = "SELECT Player_ID FROM Player WHERE Team_ID = %s"
+    query = "SELECT Player_ID FROM player WHERE Team_ID = %s"
     cursor.execute(query, (team_id,))
     records = cursor.fetchall()
     cursor.close()
@@ -253,7 +253,7 @@ def select_team_player_ids(db, team_id):
 # Select ALL Ratings of a Specific Player
 def select_specific_player_ratings(db, player_id):
     cursor = db.cursor()
-    query = "SELECT r.*, p.First_Name as First, p.Last_Name as Last FROM Ratings as r JOIN Player as p ON r.Player_ID = p.Player_ID WHERE r.Player_ID = %s;"
+    query = "SELECT r.*, p.First_Name as First, p.Last_Name as Last FROM ratings as r JOIN player as p ON r.Player_ID = p.Player_ID WHERE r.Player_ID = %s;"
     cursor.execute(query, (player_id,))
     records = cursor.fetchall()
 
@@ -297,7 +297,7 @@ def select_specific_player_ratings(db, player_id):
 def select_specific_player_game_stats(db, player_id, season_id):
     cursor = db.cursor()
 
-    query = "SELECT gs.*, p.First_Name as First, p.Last_Name as Last FROM Game_Stats as gs JOIN Player as p ON gs.Player_ID = p.Player_ID WHERE gs.Player_ID = %s AND gs.Season_ID = %s;"
+    query = "SELECT gs.*, p.First_Name as First, p.Last_Name as Last FROM game_stats as gs JOIN player as p ON gs.Player_ID = p.Player_ID WHERE gs.Player_ID = %s AND gs.Season_ID = %s;"
     cursor.execute(query, (player_id, season_id,))
     records = cursor.fetchall()
 
@@ -347,7 +347,7 @@ def search_player_first_name(db, player_name):
     wildcard_name = "%" + player_name + "%"  # Adds '%' before and after the input
 
     cursor = db.cursor()
-    query = "SELECT * FROM Player WHERE First_Name LIKE %s"
+    query = "SELECT * FROM player WHERE First_Name LIKE %s"
     cursor.execute(query, (wildcard_name,))
     records = cursor.fetchall()
 
@@ -368,7 +368,7 @@ def select_specific_player_info(db, player_id):
     
     query = """
     SELECT ply.*, pos.Code as Position 
-    FROM Player as ply
+    FROM player as ply
     JOIN position as pos ON ply.Position_ID = pos.Position_ID 
     WHERE ply.Player_ID = %s;
     """
@@ -418,7 +418,7 @@ def select_specific_player_info(db, player_id):
 def group_players_by_country(db):
     cursor = db.cursor()
 
-    query = "SELECT Country_ID, COUNT(*) as Players FROM Player GROUP BY Country_ID ORDER BY COUNT(*) DESC;"
+    query = "SELECT Country_ID, COUNT(*) as Players FROM player GROUP BY Country_ID ORDER BY COUNT(*) DESC;"
     cursor.execute(query)
     records = cursor.fetchall()
 
@@ -450,7 +450,7 @@ def group_players_by_country(db):
 def select_all_positions(db):
     cursor = db.cursor()
 
-    query = "SELECT * FROM Position"
+    query = "SELECT * FROM position;"
     cursor.execute(query)
     records = cursor.fetchall()
 
@@ -480,7 +480,7 @@ def select_all_positions(db):
 def select_all_countries(db):
     cursor = db.cursor()
 
-    query = "SELECT * FROM Countries"
+    query = "SELECT * FROM countries;"
     cursor.execute(query)
     records = cursor.fetchall()
 
@@ -576,7 +576,7 @@ def insert_player_ratings(db, player_ratings):
 # Deletes a Player record from the DB based on specfied player_id
 def delete_player(db, player_id):
     
-    query = "DELETE FROM Player WHERE Player_ID = %s"
+    query = "DELETE FROM player WHERE Player_ID = %s"
 
     try:
         cursor = db.cursor()
@@ -668,7 +668,7 @@ def insert_new_team(db, team_attributes):  # team_attributes is an array of attr
 # Deletes a specific Team record based on specified Team_ID
 def delete_specific_team(db, team_id):
 
-    query ="DELETE FROM Team WHERE Team_ID = %s"
+    query ="DELETE FROM team WHERE Team_ID = %s"
 
     try:
         cursor = db.cursor()
@@ -687,7 +687,7 @@ def update_specific_team(db, team_id, new_team_id):
     try:
         cursor = db.cursor()
 
-        query = "UPDATE Team SET Team_ID = %s WHERE Team_ID = %s;"
+        query = "UPDATE team SET Team_ID = %s WHERE Team_ID = %s;"
         
         cursor.execute(query, (new_team_id, team_id))
         db.commit()
