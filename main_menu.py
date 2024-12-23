@@ -28,15 +28,19 @@ def start_game(navigator):
     while True:
         password = getpass.getpass("Enter your localhost database password to start the game: ")
         
+        # Determine if SSL should be disabled (Linux-specific workaround)
+        disable_ssl = platform.system() == "Linux"
+        
         # Create DB Connection
         try:
             db = mysql.connect(
                 host="localhost",
                 user="root",
-                passwd=password,
+                password=password,
                 database="baseball_game_db",
-		        ssl_disabled=True
+                ssl_disabled=disable_ssl
             )
+            
             print("Connection successful!")
             time.sleep(1)
             # Once connected, show the main menu
